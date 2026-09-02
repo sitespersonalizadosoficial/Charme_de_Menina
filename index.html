@@ -2,12 +2,10 @@
 <html lang="pt-BR">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charme de Menina</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Charme de Menina</title>
 
 <style>
 
@@ -65,43 +63,31 @@ button{
 ===================================================== */
 
 header{
-
     position:sticky;
-
     top:0;
-
     z-index:1000;
 
     background:var(--branco);
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     min-height:100px;
-
     padding:10px 30px;
 
     border-bottom:1px solid #eadde2;
-
     box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
-
 .logo{
-
     position:absolute;
-
     left:30px;
 
     width:75px;
-
     height:75px;
 
     border-radius:50%;
-
     object-fit:cover;
 
     border:2px solid var(--rosa);
@@ -109,34 +95,23 @@ header{
     box-shadow:0 3px 12px rgba(217,79,131,.15);
 }
 
-
 .marca{
     text-align:center;
 }
 
-
 .marca h1{
-
     font-family:Georgia,serif;
-
     font-size:30px;
-
     color:var(--preto);
-
     letter-spacing:.5px;
 }
 
-
 .marca p{
-
     margin-top:4px;
-
     color:var(--rosa);
 
     font-size:12px;
-
     letter-spacing:3px;
-
     text-transform:uppercase;
 }
 
@@ -146,19 +121,15 @@ header{
 ===================================================== */
 
 .botao-carrinho{
-
     position:absolute;
-
     right:30px;
 
     width:54px;
-
     height:54px;
 
     border-radius:50%;
 
     background:white;
-
     border:2px solid var(--rosa);
 
     color:var(--preto);
@@ -172,73 +143,60 @@ header{
     box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-
 .botao-carrinho:hover{
-
     background:var(--rosa);
-
     color:white;
-
     transform:scale(1.05);
-
-    box-shadow:0 5px 18px rgba(217,79,131,.25);
 }
 
-
 .quantidade-carrinho{
-
     position:absolute;
 
     top:-5px;
-
     right:-5px;
 
     width:22px;
-
     height:22px;
 
     border-radius:50%;
 
     background:var(--rosa);
-
     color:white;
 
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
     font-size:11px;
-
     font-weight:bold;
 }
 
 
 /* =====================================================
-   MENU DE CATEGORIAS FIXO
+   MENU DESLIZÁVEL
 ===================================================== */
 
 .menu-categorias{
-
     background:var(--preto);
 
     display:flex;
-
-    justify-content:center;
-
+    justify-content:flex-start;
     align-items:center;
 
-    gap:4px;
+    gap:6px;
 
-    padding:11px 15px;
+    padding:11px 20px;
 
     overflow-x:auto;
-
     scrollbar-width:none;
 
-    position:sticky;
+    scroll-behavior:smooth;
+    -webkit-overflow-scrolling:touch;
 
+    cursor:grab;
+    user-select:none;
+
+    position:sticky;
     top:100px;
 
     z-index:900;
@@ -246,28 +204,27 @@ header{
     box-shadow:0 4px 15px rgba(0,0,0,.18);
 }
 
+.menu-categorias:active{
+    cursor:grabbing;
+}
 
 .menu-categorias::-webkit-scrollbar{
     display:none;
 }
 
-
 .menu-categorias button{
-
     flex-shrink:0;
 
     border:0;
-
     background:transparent;
 
-    color:#ffffff;
+    color:white;
 
-    padding:11px 15px;
+    padding:11px 16px;
 
     cursor:pointer;
 
     font-size:11px;
-
     font-weight:bold;
 
     letter-spacing:.6px;
@@ -279,19 +236,15 @@ header{
     white-space:nowrap;
 }
 
-
 .menu-categorias button::after{
-
     content:"";
 
     position:absolute;
 
     left:50%;
-
     bottom:2px;
 
     width:0;
-
     height:2px;
 
     background:var(--rosa);
@@ -303,17 +256,13 @@ header{
     border-radius:5px;
 }
 
-
 .menu-categorias button:hover,
 .menu-categorias button.ativa{
-
     color:#f28aad;
 }
 
-
 .menu-categorias button:hover::after,
 .menu-categorias button.ativa::after{
-
     width:70%;
 }
 
@@ -323,7 +272,6 @@ header{
 ===================================================== */
 
 .hero{
-
     max-width:1250px;
 
     margin:30px auto;
@@ -333,19 +281,16 @@ header{
     border-radius:25px;
 
     background:
-
         radial-gradient(
             circle at 10% 20%,
             rgba(255,255,255,.08),
             transparent 22%
         ),
-
         radial-gradient(
             circle at 90% 80%,
             rgba(217,79,131,.22),
             transparent 30%
         ),
-
         linear-gradient(
             135deg,
             #171317,
@@ -363,15 +308,12 @@ header{
     box-shadow:0 12px 35px rgba(0,0,0,.12);
 }
 
-
 .hero::before{
-
     content:"✦";
 
     position:absolute;
 
     top:25px;
-
     left:40px;
 
     color:#f28aad;
@@ -379,15 +321,12 @@ header{
     font-size:25px;
 }
 
-
 .hero::after{
-
     content:"✦";
 
     position:absolute;
 
     bottom:25px;
-
     right:40px;
 
     color:#f28aad;
@@ -395,9 +334,7 @@ header{
     font-size:25px;
 }
 
-
 .hero small{
-
     color:#f28aad;
 
     font-weight:bold;
@@ -407,9 +344,7 @@ header{
     text-transform:uppercase;
 }
 
-
 .hero h2{
-
     font-family:Georgia,serif;
 
     font-size:42px;
@@ -419,9 +354,7 @@ header{
     color:white;
 }
 
-
 .hero p{
-
     max-width:650px;
 
     margin:auto;
@@ -431,9 +364,7 @@ header{
     color:#f8edf1;
 }
 
-
 .hero button{
-
     margin-top:25px;
 
     padding:13px 27px;
@@ -451,23 +382,17 @@ header{
     transition:.3s;
 }
 
-
 .hero button:hover{
-
     background:var(--rosa);
-
     transform:translateY(-2px);
-
-    box-shadow:0 5px 18px rgba(217,79,131,.3);
 }
 
 
 /* =====================================================
-   SEÇÃO DOS PRODUTOS
+   SEÇÃO
 ===================================================== */
 
 .secao{
-
     max-width:1250px;
 
     margin:55px auto;
@@ -477,31 +402,20 @@ header{
     scroll-margin-top:160px;
 }
 
-
-/* =====================================================
-   TÍTULO DA CATEGORIA
-===================================================== */
-
 .titulo-secao{
-
     text-align:center;
 
     margin-bottom:40px;
 
-    position:relative;
-
     padding:10px 20px 25px;
 }
 
-
 .titulo-secao::before{
-
     content:"";
 
     display:block;
 
     width:55px;
-
     height:2px;
 
     background:var(--rosa);
@@ -511,9 +425,7 @@ header{
     border-radius:5px;
 }
 
-
 .titulo-secao small{
-
     display:block;
 
     color:var(--rosa);
@@ -529,25 +441,17 @@ header{
     margin-bottom:8px;
 }
 
-
 .titulo-secao h2{
-
     font-family:Georgia,serif;
 
     font-size:38px;
 
     color:var(--preto);
 
-    margin:0;
-
     line-height:1.2;
-
-    position:relative;
 }
 
-
 .titulo-secao h2::after{
-
     content:"✦";
 
     display:block;
@@ -559,9 +463,7 @@ header{
     margin-top:10px;
 }
 
-
 .titulo-secao p{
-
     margin:10px auto 0;
 
     max-width:600px;
@@ -575,11 +477,10 @@ header{
 
 
 /* =====================================================
-   GRID
+   GRID DOS CARDS
 ===================================================== */
 
 .lista-produtos{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -589,11 +490,10 @@ header{
 
 
 /* =====================================================
-   CARD PRODUTO
+   CARD
 ===================================================== */
 
-.produto{
-
+.card{
     background:white;
 
     border:1px solid var(--borda);
@@ -607,9 +507,7 @@ header{
     box-shadow:0 3px 14px rgba(23,19,23,.05);
 }
 
-
-.produto:hover{
-
+.card:hover{
     transform:translateY(-5px);
 
     box-shadow:0 12px 28px rgba(217,79,131,.13);
@@ -619,15 +517,13 @@ header{
 
 
 /* =====================================================
-   IMAGEM / ESPAÇO DA FOTO
+   IMAGEM DO CARD (AJUSTADO PARA ABRANGER O CONJUNTO INTEIRO)
 ===================================================== */
 
-.imagem-produto{
-
-    height:220px;
+.card-image{
+    height:280px;
 
     background:
-
         radial-gradient(
             circle at center,
             #ffffff 0%,
@@ -637,7 +533,6 @@ header{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     position:relative;
@@ -645,57 +540,50 @@ header{
     overflow:hidden;
 }
 
-
-.imagem-produto img{
-
+.card-image img{
     width:100%;
-
     height:100%;
 
-    object-fit:cover;
+    object-fit:contain;
+    object-position:center;
+
+    padding:8px;
+
+    transition:.4s;
 }
 
+.card:hover .card-image img{
+    transform:scale(1.04);
+}
 
-.imagem-produto::after{
-
+.card-image::after{
     content:"CHARME DE MENINA";
 
     position:absolute;
 
-    bottom:12px;
+    bottom:8px;
 
-    color:rgba(217,79,131,.22);
+    color:rgba(217,79,131,.35);
 
     font-family:Georgia,serif;
 
     font-size:10px;
 
     letter-spacing:2px;
-}
 
-
-.icone-produto{
-
-    font-size:65px;
-
-    position:relative;
-
-    z-index:1;
+    pointer-events:none;
 }
 
 
 /* =====================================================
-   INFORMAÇÕES DO PRODUTO
+   CONTEÚDO DO CARD
 ===================================================== */
 
-.info-produto{
-
+.card-content{
     padding:17px;
 }
 
-
-.categoria-produto{
-
+.card-category{
     font-size:10px;
 
     color:var(--rosa);
@@ -707,9 +595,7 @@ header{
     font-weight:bold;
 }
 
-
-.info-produto h3{
-
+.card-content h3{
     font-family:Georgia,serif;
 
     color:var(--preto);
@@ -719,9 +605,17 @@ header{
     font-size:19px;
 }
 
+.card-content p{
+    color:#75666d;
 
-.preco{
+    font-size:13px;
 
+    line-height:1.4;
+
+    min-height:18px;
+}
+
+.price{
     color:var(--rosa);
 
     font-size:19px;
@@ -733,11 +627,10 @@ header{
 
 
 /* =====================================================
-   BOTÃO ADICIONAR
+   BOTÃO DOS CARDS
 ===================================================== */
 
-.btn-adicionar{
-
+.btn-add{
     width:100%;
 
     padding:11px;
@@ -757,9 +650,7 @@ header{
     transition:.3s;
 }
 
-
-.btn-adicionar:hover{
-
+.btn-add:hover{
     background:var(--rosa);
 
     transform:translateY(-1px);
@@ -767,32 +658,11 @@ header{
 
 
 /* =====================================================
-   SEM PRODUTOS
+   CARD OCULTO
 ===================================================== */
 
-.sem-produtos{
-
-    grid-column:1/-1;
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    background:white;
-
-    border-radius:18px;
-
-    border:1px solid var(--borda);
-}
-
-
-.sem-produtos h3{
-
-    font-family:Georgia,serif;
-
-    color:var(--preto);
-
-    margin-bottom:10px;
+.card.oculto{
+    display:none;
 }
 
 
@@ -801,7 +671,6 @@ header{
 ===================================================== */
 
 .overlay{
-
     position:fixed;
 
     inset:0;
@@ -815,9 +684,7 @@ header{
     backdrop-filter:blur(2px);
 }
 
-
 .overlay.ativo{
-
     display:block;
 }
 
@@ -827,11 +694,9 @@ header{
 ===================================================== */
 
 .carrinho{
-
     position:fixed;
 
     top:0;
-
     right:-470px;
 
     width:450px;
@@ -853,9 +718,7 @@ header{
     box-shadow:-8px 0 30px rgba(0,0,0,.22);
 }
 
-
 .carrinho.aberto{
-
     right:0;
 }
 
@@ -865,7 +728,6 @@ header{
 ===================================================== */
 
 .cabecalho-carrinho{
-
     background:var(--preto);
 
     color:white;
@@ -879,17 +741,13 @@ header{
     align-items:center;
 }
 
-
 .cabecalho-carrinho h2{
-
     font-family:Georgia,serif;
 
     color:white;
 }
 
-
 .fechar-carrinho{
-
     border:0;
 
     background:transparent;
@@ -899,23 +757,18 @@ header{
     font-size:25px;
 
     cursor:pointer;
-
-    transition:.2s;
 }
 
-
 .fechar-carrinho:hover{
-
     color:#f28aad;
 }
 
 
 /* =====================================================
-   ITENS DO CARRINHO
+   ITENS CARRINHO
 ===================================================== */
 
 .itens-carrinho{
-
     flex:1;
 
     overflow-y:auto;
@@ -923,9 +776,7 @@ header{
     padding:18px;
 }
 
-
 .carrinho-vazio{
-
     text-align:center;
 
     padding:50px 20px;
@@ -933,9 +784,7 @@ header{
     color:#967f88;
 }
 
-
 .item-carrinho{
-
     display:flex;
 
     gap:12px;
@@ -945,37 +794,31 @@ header{
     border-bottom:1px solid #eee;
 }
 
-
 .item-icone{
-
-    width:50px;
-
-    height:50px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    background:var(--rosa-claro);
+    width:55px;
+    height:55px;
 
     border-radius:10px;
 
-    font-size:25px;
+    overflow:hidden;
+
+    background:var(--rosa-claro);
 
     flex-shrink:0;
 }
 
+.item-icone img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
 
 .item-info{
-
     flex:1;
 }
 
-
 .item-info h4{
-
     color:var(--preto);
 
     font-size:14px;
@@ -983,9 +826,7 @@ header{
     margin-bottom:5px;
 }
 
-
 .item-preco{
-
     color:var(--rosa);
 
     font-weight:bold;
@@ -993,9 +834,7 @@ header{
     font-size:13px;
 }
 
-
 .controles{
-
     display:flex;
 
     align-items:center;
@@ -1005,11 +844,8 @@ header{
     margin-top:8px;
 }
 
-
 .controles button{
-
     width:25px;
-
     height:25px;
 
     border-radius:50%;
@@ -1021,21 +857,15 @@ header{
     color:var(--preto);
 
     cursor:pointer;
-
-    transition:.2s;
 }
 
-
 .controles button:hover{
-
     background:var(--rosa);
 
     color:white;
 }
 
-
 .controles span{
-
     font-weight:bold;
 
     min-width:20px;
@@ -1049,7 +879,6 @@ header{
 ===================================================== */
 
 .dados-pedido{
-
     border-top:1px solid #eee;
 
     padding:18px;
@@ -1061,9 +890,7 @@ header{
     overflow-y:auto;
 }
 
-
 .dados-pedido h3{
-
     font-family:Georgia,serif;
 
     color:var(--preto);
@@ -1071,15 +898,11 @@ header{
     margin-bottom:15px;
 }
 
-
 .campo{
-
     margin-bottom:13px;
 }
 
-
 .campo label{
-
     display:block;
 
     font-size:12px;
@@ -1091,11 +914,8 @@ header{
     margin-bottom:5px;
 }
 
-
 .campo input,
-
 .campo select{
-
     width:100%;
 
     padding:11px;
@@ -1107,15 +927,9 @@ header{
     background:white;
 
     outline:none;
-
-    transition:.2s;
 }
 
-
-.campo input:focus,
-
-.campo select:focus{
-
+.campo input:focus{
     border-color:var(--rosa);
 
     box-shadow:0 0 0 2px rgba(217,79,131,.08);
@@ -1127,7 +941,6 @@ header{
 ===================================================== */
 
 .opcoes{
-
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -1135,9 +948,7 @@ header{
     gap:8px;
 }
 
-
 .opcao{
-
     border:1px solid #dfcbd3;
 
     border-radius:9px;
@@ -1151,35 +962,26 @@ header{
     text-align:center;
 
     font-size:12px;
-
-    transition:.2s;
 }
 
-
 .opcao input{
-
     margin-right:5px;
 }
 
-
 .opcao:has(input:checked){
-
     border-color:var(--rosa);
 
     background:var(--rosa-claro);
-
-    color:var(--preto);
 
     font-weight:bold;
 }
 
 
 /* =====================================================
-   PAGAMENTOS
+   PAGAMENTO
 ===================================================== */
 
 .pagamentos{
-
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
@@ -1187,9 +989,7 @@ header{
     gap:7px;
 }
 
-
 .pagamento{
-
     border:1px solid #dfcbd3;
 
     background:white;
@@ -1203,24 +1003,16 @@ header{
     font-size:11px;
 
     cursor:pointer;
-
-    transition:.2s;
 }
 
-
 .pagamento input{
-
     display:none;
 }
 
-
 .pagamento:has(input:checked){
-
     border-color:var(--rosa);
 
     background:var(--rosa-claro);
-
-    color:var(--preto);
 
     font-weight:bold;
 }
@@ -1231,15 +1023,11 @@ header{
 ===================================================== */
 
 #campoTroco,
-
 #campoValorTroco{
-
     display:none;
 }
 
-
 .troco-opcoes{
-
     display:grid;
 
     grid-template-columns:1fr 1fr;
@@ -1247,9 +1035,7 @@ header{
     gap:7px;
 }
 
-
 .troco-opcao{
-
     border:1px solid #dfcbd3;
 
     background:white;
@@ -1263,19 +1049,13 @@ header{
     cursor:pointer;
 
     font-size:12px;
-
-    transition:.2s;
 }
 
-
 .troco-opcao input{
-
     margin-right:4px;
 }
 
-
 .troco-opcao:has(input:checked){
-
     border-color:var(--rosa);
 
     background:var(--rosa-claro);
@@ -1287,7 +1067,6 @@ header{
 ===================================================== */
 
 .resumo{
-
     padding:18px;
 
     border-top:1px solid #eadde2;
@@ -1295,9 +1074,7 @@ header{
     background:white;
 }
 
-
 .linha-resumo{
-
     display:flex;
 
     justify-content:space-between;
@@ -1309,9 +1086,7 @@ header{
     font-size:13px;
 }
 
-
 .linha-total{
-
     display:flex;
 
     justify-content:space-between;
@@ -1325,17 +1100,13 @@ header{
     border-top:1px solid #eee;
 }
 
-
 .linha-total span{
-
     font-weight:bold;
 
     color:var(--preto);
 }
 
-
 .valor-total{
-
     font-size:23px;
 
     color:var(--rosa);
@@ -1345,11 +1116,10 @@ header{
 
 
 /* =====================================================
-   BOTÃO FINALIZAR WHATSAPP
+   FINALIZAR
 ===================================================== */
 
 .btn-finalizar{
-
     width:100%;
 
     padding:14px;
@@ -1369,18 +1139,12 @@ header{
     cursor:pointer;
 
     font-size:15px;
-
-    transition:.3s;
 }
 
-
 .btn-finalizar:hover{
-
     filter:brightness(.93);
 
     transform:translateY(-1px);
-
-    box-shadow:0 5px 15px rgba(37,211,102,.22);
 }
 
 
@@ -1389,7 +1153,6 @@ header{
 ===================================================== */
 
 footer{
-
     background:var(--preto);
 
     color:white;
@@ -1401,9 +1164,7 @@ footer{
     margin-top:60px;
 }
 
-
 footer h2{
-
     font-family:Georgia,serif;
 
     color:#f28aad;
@@ -1411,36 +1172,10 @@ footer h2{
     margin-bottom:10px;
 }
 
-
 footer p{
-
     color:#eadde2;
 
     font-size:13px;
-}
-
-
-/* =====================================================
-   ANIMAÇÃO DOS PRODUTOS
-===================================================== */
-
-.produto{
-
-    animation:aparecerProduto .35s ease;
-}
-
-
-@keyframes aparecerProduto{
-
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 
@@ -1451,9 +1186,7 @@ footer p{
 @media(max-width:1000px){
 
     .lista-produtos{
-
         grid-template-columns:repeat(3,1fr);
-
     }
 
 }
@@ -1466,1308 +1199,1351 @@ footer p{
 @media(max-width:700px){
 
     header{
-
         min-height:85px;
 
         padding:8px 70px;
-
     }
 
-
     .logo{
-
         left:15px;
 
         width:58px;
-
         height:58px;
-
     }
-
 
     .marca h1{
-
         font-size:23px;
-
     }
 
-
     .marca p{
-
         font-size:9px;
 
         letter-spacing:2px;
-
     }
 
-
     .botao-carrinho{
-
         right:15px;
 
         width:48px;
-
         height:48px;
-
     }
 
-
-    /* =================================================
-       MENU FIXO NO CELULAR
-    ================================================= */
-
     .menu-categorias{
-
-        justify-content:flex-start;
-
         position:sticky;
 
         top:85px;
 
-        z-index:900;
+        padding:9px 12px;
 
-        padding:9px 10px;
-
-        gap:2px;
-
+        gap:4px;
     }
 
-
     .menu-categorias button{
-
         padding:10px 13px;
 
         font-size:10px;
-
     }
 
-
-    /* =================================================
-       HERO
-    ================================================= */
-
     .hero{
-
         margin:20px 12px;
 
         padding:45px 20px;
 
         border-radius:20px;
-
     }
-
 
     .hero h2{
-
         font-size:30px;
-
     }
-
 
     .hero p{
-
         font-size:14px;
-
     }
 
-
-    /* =================================================
-       PRODUTOS
-    ================================================= */
-
     .secao{
-
         padding:0 12px;
 
         margin-top:35px;
 
         scroll-margin-top:145px;
-
     }
 
-
     .titulo-secao{
-
         margin-bottom:28px;
 
         padding:5px 10px 20px;
-
     }
-
 
     .titulo-secao h2{
-
         font-size:30px;
-
     }
 
-
     .titulo-secao small{
-
         font-size:9px;
 
         letter-spacing:3px;
-
     }
-
 
     .titulo-secao p{
-
         font-size:13px;
-
     }
 
-
     .lista-produtos{
-
         grid-template-columns:repeat(2,1fr);
 
         gap:12px;
-
     }
 
-
-    .imagem-produto{
-
-        height:170px;
-
+    .card-image{
+        height:220px;
     }
 
-
-    .icone-produto{
-
-        font-size:50px;
-
-    }
-
-
-    .info-produto{
-
+    .card-content{
         padding:12px;
-
     }
 
-
-    .categoria-produto{
-
+    .card-category{
         font-size:8px;
-
     }
 
-
-    .info-produto h3{
-
+    .card-content h3{
         font-size:16px;
-
     }
 
+    .card-content p{
+        font-size:12px;
+    }
 
-    .preco{
-
+    .price{
         font-size:17px;
-
     }
-
-
-    /* =================================================
-       CARRINHO
-    ================================================= */
 
     .carrinho{
-
         width:100%;
-
     }
 
-
     .dados-pedido{
-
         max-height:50vh;
-
     }
 
 }
 
 
 /* =====================================================
-   CELULARES PEQUENOS
+   CELULAR PEQUENO
 ===================================================== */
 
 @media(max-width:380px){
 
     .lista-produtos{
-
         grid-template-columns:1fr;
-
     }
-
 
     .hero h2{
-
         font-size:27px;
-
     }
-
 
     .pagamentos{
-
         grid-template-columns:1fr;
-
     }
 
-
     .marca h1{
-
         font-size:20px;
-
     }
 
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     CABEÇALHO
+  <!-- =====================================================
+     HEADER
 ===================================================== -->
 
-<header>
-
-
-    <img
-        src="WhatsApp Image 2026-09-02 at 14.33.25.jpeg"
-        class="logo"
-        alt="Charme de Menina"
-    >
-
-
+  <header>
+    <img src="WhatsApp Image 2026-09-02 at 14.33.25.jpeg" class="logo" alt="Charme de Menina" />
     <div class="marca">
-
-        <h1>
-            Charme de Menina
-        </h1>
-
-        <p>
-            Beleza • Charme • Delicadeza
-        </p>
-
+      <h1>Charme de Menina</h1>
+      <p>Beleza • Charme • Delicadeza</p>
     </div>
-
-
-    <button
-        class="botao-carrinho"
-        onclick="abrirCarrinho()"
-    >
-
-        🛍️
-
-        <span
-            class="quantidade-carrinho"
-            id="quantidadeCarrinho"
-        >
-            0
-        </span>
-
+    <button class="botao-carrinho" onclick="abrirCarrinho()">
+      🛍️
+      <span class="quantidade-carrinho" id="quantidadeCarrinho">0</span>
     </button>
+  </header>
 
-
-</header>
-
-
-<!-- =====================================================
-     MENU FIXO
+  <!-- =====================================================
+     MENU DESLIZÁVEL
 ===================================================== -->
 
-<nav class="menu-categorias">
+  <nav class="menu-categorias" id="menuCategorias">
+    <button class="ativa" onclick="filtrar('conjuntos', this)">CONJUNTOS</button>
+    <button onclick="filtrar('brincos', this)">BRINCOS</button>
+    <button onclick="filtrar('colares', this)">COLARES</button>
+    <button onclick="filtrar('acessorios-infantil', this)">ACESSÓRIOS INFANTIL</button>
+    <button onclick="filtrar('relogios', this)">RELÓGIOS</button>
+    <button onclick="filtrar('pulseiras', this)">PULSEIRAS / BRACELETES</button>
+    <button onclick="filtrar('pandora', this)">PULSEIRA PANDORA</button>
+    <button onclick="filtrar('maquiagem', this)">MAQUIAGEM</button>
+    <button onclick="filtrar('skincare', this)">SKINCARE</button>
+    <button onclick="filtrar('cabelos', this)">CABELOS</button>
+    <button onclick="filtrar('unhas', this)">UNHAS</button>
+    <button onclick="filtrar('cilios', this)">CÍLIOS &amp; SOBRANCELHAS</button>
+  </nav>
 
-
-    <button
-        class="ativa"
-        onclick="filtrar('acessorios', this)"
-    >
-        ACESSÓRIOS
-    </button>
-
-
-    <button
-        onclick="filtrar('pandora', this)"
-    >
-        PULSEIRA PANDORA
-    </button>
-
-
-    <button
-        onclick="filtrar('maquiagem', this)"
-    >
-        MAQUIAGEM
-    </button>
-
-
-    <button
-        onclick="filtrar('skincare', this)"
-    >
-        SKINCARE
-    </button>
-
-
-    <button
-        onclick="filtrar('cabelos', this)"
-    >
-        CABELOS
-    </button>
-
-
-    <button
-        onclick="filtrar('unhas', this)"
-    >
-        UNHAS
-    </button>
-
-
-    <button
-        onclick="filtrar('cilios', this)"
-    >
-        CÍLIOS & SOBRANCELHAS
-    </button>
-
-
-</nav>
-
-
-<!-- =====================================================
+  <!-- =====================================================
      HERO
 ===================================================== -->
 
-<section class="hero">
+  <section class="hero">
+    <small>Charme de Menina</small>
+    <h2>Seu charme começa aqui ✨</h2>
+    <p>Encontre semijoias, relógios, maquiagem e produtos de beleza escolhidos para deixar cada momento ainda mais especial.</p>
+    <button onclick="irParaProdutos()">Ver produtos</button>
+  </section>
 
-
-    <small>
-        Charme de Menina
-    </small>
-
-
-    <h2>
-        Seu charme começa aqui ✨
-    </h2>
-
-
-    <p>
-        Encontre acessórios, maquiagem e produtos
-        de beleza escolhidos para deixar cada momento
-        ainda mais especial.
-    </p>
-
-
-    <button onclick="irParaProdutos()">
-
-        Ver produtos
-
-    </button>
-
-
-</section>
-
-
-<!-- =====================================================
+  <!-- =====================================================
      PRODUTOS
 ===================================================== -->
 
-<section
-    class="secao"
-    id="produtos"
->
+  <section class="secao" id="produtos">
 
+  <!-- TÍTULO DA SEÇÃO -->
+  <div class="titulo-secao">
+    <small>Nossa coleção</small>
+    <h2 id="tituloCategoria">Conjuntos</h2>
+    <p id="descricaoCategoria">Conjuntos perfeitos e combinações prontas para realçar seu look.</p>
+  </div>
 
-    <div class="titulo-secao">
+  <!-- LISTA DE PRODUTOS -->
+  <div class="lista-produtos" id="listaProdutos">
 
+    <!-- =================================================
+         CONJUNTOS
+         ================================================= -->
 
-        <small>
-            Nossa coleção
-        </small>
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco1" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto1.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco2" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto2.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
-        <h2 id="tituloCategoria">
-            Acessórios
-        </h2>
+     <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco3" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto3.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco4" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto4.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
-        <p id="descricaoCategoria">
-            Acessórios delicados para completar seu estilo.
-        </p>
+     <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco5" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto5.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco6" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto6.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
 
+     <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco7" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto7.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco8" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto8.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco9" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto9.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco10" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto10.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco11" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto11.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco12" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto12.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco13" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto13.jpeg" alt="Conjunto Colar e Brinco" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Conjuntos</span>
+        <h3>Conjunto Colar e Brinco</h3>
+        <p>Conjunto aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+      <div class="card" data-categoria="colares" data-name="conjunto14" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="conjunto14.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Conjunto </h3>
+        <p>Colar e brinco aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    
+
+    <!-- =================================================
+         BRINCOS
+         ================================================= -->
+
+    <div class="card" data-categoria="brincos" data-name="Brinco Dourado" data-price="24.90" data-image="img/brinco-dourado.jpg">
+      <div class="card-image">
+        <img src="img/brinco-dourado.jpg" alt="Brinco Dourado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Brincos</span>
+        <h3>Brinco Dourado</h3>
+        <p>Brinco delicado folheado</p>
+        <div class="price">R$ 24,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="brincos" data-name="Piercing Delicado" data-price="19.90" data-image="img/piercing.jpg">
+      <div class="card-image">
+        <img src="img/piercing.jpg" alt="Piercing Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Brincos / Piercings</span>
+        <h3>Piercing Delicado</h3>
+        <p>Piercing para orelha</p>
+        <div class="price">R$ 19,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
     </div>
 
 
-    <div
-        class="lista-produtos"
-        id="listaProdutos"
-    ></div>
+    <!-- =================================================
+         COLARES
+         ================================================= -->
 
+    <div class="card" data-categoria="colares" data-name="Colar Duplo1" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarduplo1.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Duplo</h3>
+        <p>Colar Duplo aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="colares" data-name="Colar colarchoker1" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarchoker1.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Choker</h3>
+        <p>Colar Duplo aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="Colar duplo2" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarduplo2.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Duplo</h3>
+        <p>Colar Duplo aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="Colar3" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar3.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar delicado</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="Colar4" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar4.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar delicado</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="colares" data-name="Colar colarchoker2" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarchoker2.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Croker</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="Colar5" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar5.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+
+    <div class="card" data-categoria="colares" data-name="Colar6" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar6.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="Colar7" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar7.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar8" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar8.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar9" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar9.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar10" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar10.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar11" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar11.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar12" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar12.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar13" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar13.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="colares" data-name="colar14" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar14.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar delicado</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar15" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar15.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar16" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar16.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+      <div class="card" data-categoria="colares" data-name="colar17" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar17.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar18" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar18.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+      <div class="card" data-categoria="colares" data-name="colar19" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar19.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar20" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar20.png" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar21" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar21.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar22" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar22.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar23" data-price="40.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar23.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 40,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colarduplo3" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarduplo3.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Duplo </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colarduplo4" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colarduplo4.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Duplo </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="colares" data-name="colar24" data-price="35.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar24.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar  </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 35,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar25" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar25.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar  </h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar26" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar26.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="colares" data-name="colar27" data-price="25.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar27.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar Filho</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 25,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar29" data-price="30.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar29.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar30" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar30.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar31" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar31.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar32" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar32.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar33" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar33.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar34" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar34.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar35" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar35.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+     <div class="card" data-categoria="colares" data-name="colar36" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar36.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+     <div class="card" data-categoria="colares" data-name="colar37" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar37.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="colares" data-name="colar38" data-price="20.00" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="colar38.jpeg" alt="Colar Delicado" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Colares</span>
+        <h3>Colar</h3>
+        <p>Colar aço inoxidável</p>
+        <div class="price">R$ 20,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- =================================================
+         ACESSÓRIOS INFANTIL
+         ================================================= -->
+
+    <div class="card" data-categoria="acessorios-infantil" data-name="Acessório Infantil1" data-price="30.00" data-image="img/acessorio-infantil.jpg">
+      <div class="card-image">
+        <img src="conjuntoinfantil1.jpeg" alt="Acessório Infantil" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Acessórios infantil</span>
+        <h3>Conjunto infantil Biju</h3>
+        <p>Peça delicada e lúdica</p>
+        <div class="price">R$ 30,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         RELÓGIOS
+         ================================================= -->
+
+    <div class="card" data-categoria="relogios" data-name="Relógio Feminino dourado" data-price="50.00" data-image="img/relogio-feminino.jpg">
+      <div class="card-image">
+        <img src="relogio1dourado.jpeg" alt="Relógio Feminino" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Relógios</span>
+        <h3>Relógio Feminino Dourado</h3>
+        <p>Relógio aço </p>
+        <div class="price">R$ 50,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <div class="card" data-categoria="relogios" data-name="Relógio Feminino prata1" data-price="60.00" data-image="img/relogio-feminino.jpg">
+      <div class="card-image">
+        <img src="relogio1prata.jpeg" alt="Relógio Feminino" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Relógios</span>
+        <h3>Relógio Feminino Prata</h3>
+        <p>Relógio aço </p>
+        <div class="price">R$ 60,00</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <!-- =================================================
+         PULSEIRAS / BRACELETES
+         ================================================= -->
+
+    <div class="card" data-categoria="pulseiras" data-name="Pulseira Delicada" data-price="34.90" data-image="img/pulseira-delicada.jpg">
+      <div class="card-image">
+        <img src="img/pulseira-delicada.jpg" alt="Pulseira Delicada" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Pulseiras / Braceletes</span>
+        <h3>Pulseira Delicada</h3>
+        <p>Pulseira fina com fecho ajustável</p>
+        <div class="price">R$ 34,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Delicada" data-price="29.90" data-image="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg">
+      <div class="card-image">
+        <img src="https://assets.sistemawbuy.com.br/arquivos/ec97e1f8f0885f6ffbef32eba7b896ed/produtos/67435b842881c/a-213-2-6823da60ea46a.jpg" alt="Tornozeleira Delicada" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Pulseiras / Tornozeleiras</span>
+        <h3>Tornozeleira Delicada</h3>
+        <p>Tornozeleira charmosa e leve</p>
+        <div class="price">R$ 29,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         PULSEIRA PANDORA
+         ================================================= -->
+
+    <div class="card" data-categoria="pandora" data-name="Pulseira Pandora" data-price="59.90" data-image="img/pulseira-pandora.jpg">
+      <div class="card-image">
+        <img src="img/pulseira-pandora.jpg" alt="Pulseira Pandora" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Pulseira Pandora</span>
+        <h3>Pulseira Pandora</h3>
+        <p>Pulseira para berloques</p>
+        <div class="price">R$ 59,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="pandora" data-name="Berloque Coração" data-price="34.90" data-image="img/berloque-coracao.jpg">
+      <div class="card-image">
+        <img src="img/berloque-coracao.jpg" alt="Berloque Coração" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Berloques</span>
+        <h3>Berloque Coração</h3>
+        <p>Berloque em formato de coração</p>
+        <div class="price">R$ 34,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         MAQUIAGEM
+         ================================================= -->
+
+    <div class="card" data-categoria="maquiagem" data-name="Base Líquida" data-price="39.90" data-image="img/base-liquida.jpg">
+      <div class="card-image">
+        <img src="img/base-liquida.jpg" alt="Base Líquida" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Base</span>
+        <h3>Base Líquida</h3>
+        <p>Base para maquiagem de alta cobertura</p>
+        <div class="price">R$ 39,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+    <div class="card" data-categoria="maquiagem" data-name="Batom e Gloss" data-price="27.90" data-image="img/batom-gloss.jpg">
+      <div class="card-image">
+        <img src="img/batom-gloss.jpg" alt="Batom e Gloss" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Batom e gloss</span>
+        <h3>Batom e Gloss</h3>
+        <p>Batom com alto brilho e hidratação</p>
+        <div class="price">R$ 27,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         SKINCARE
+         ================================================= -->
+
+    <div class="card" data-categoria="skincare" data-name="Água Micelar" data-price="29.90" data-image="img/agua-micelar.jpg">
+      <div class="card-image">
+        <img src="img/agua-micelar.jpg" alt="Água Micelar" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Água micelar</span>
+        <h3>Água Micelar</h3>
+        <p>Água micelar para limpeza profunda</p>
+        <div class="price">R$ 29,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         CABELOS
+         ================================================= -->
+
+    <div class="card" data-categoria="cabelos" data-name="Escova de Cabelo" data-price="24.90" data-image="img/escova-cabelo.jpg">
+      <div class="card-image">
+        <img src="img/escova-cabelo.jpg" alt="Escova de Cabelo" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Escova de cabelo</span>
+        <h3>Escova de Cabelo</h3>
+        <p>Escova desembaraçadora macia</p>
+        <div class="price">R$ 24,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         UNHAS
+         ================================================= -->
+
+    <div class="card" data-categoria="unhas" data-name="Canetinha Hidratante de Cutícula" data-price="14.90" data-image="img/canetinha-cuticula.jpg">
+      <div class="card-image">
+        <img src="img/canetinha-cuticula.jpg" alt="Canetinha Hidratante de Cutícula" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Cuidados com as unhas</span>
+        <h3>Canetinha de Cutícula</h3>
+        <p>Hidratante prático para cutículas</p>
+        <div class="price">R$ 14,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+
+    <!-- =================================================
+         CÍLIOS E SOBRANCELHAS
+         ================================================= -->
+
+    <div class="card" data-categoria="cilios" data-name="Cílios + Cola" data-price="24.90" data-image="img/cilios-cola.jpg">
+      <div class="card-image">
+        <img src="img/cilios-cola.jpg" alt="Cílios e Cola" />
+      </div>
+      <div class="card-content">
+        <span class="card-category">Cílios e cola</span>
+        <h3>Cílios + Cola</h3>
+        <p>Cílios postiços com excelente fixação</p>
+        <div class="price">R$ 24,90</div>
+        <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
-
-<!-- =====================================================
+  <!-- =====================================================
      OVERLAY
 ===================================================== -->
 
-<div
-    class="overlay"
-    id="overlay"
-    onclick="fecharCarrinho()"
-></div>
+  <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
 
-
-<!-- =====================================================
+  <!-- =====================================================
      CARRINHO
 ===================================================== -->
 
-<aside
-    class="carrinho"
-    id="carrinho"
->
-
-
+  <aside class="carrinho" id="carrinho">
     <div class="cabecalho-carrinho">
-
-
-        <h2>
-            Meu Carrinho 🛍️
-        </h2>
-
-
-        <button
-            class="fechar-carrinho"
-            onclick="fecharCarrinho()"
-        >
-            ×
-        </button>
-
-
+      <h2>Meu Carrinho 🛍️</h2>
+      <button class="fechar-carrinho" onclick="fecharCarrinho()">×</button>
     </div>
-
-
-    <div
-        class="itens-carrinho"
-        id="itensCarrinho"
-    ></div>
-
-
+    <div class="itens-carrinho" id="itensCarrinho"></div>
     <!-- =================================================
          DADOS DO PEDIDO
     ================================================== -->
-
     <div class="dados-pedido">
-
-
-        <h3>
-            Dados do pedido
-        </h3>
-
-
-        <!-- NOME -->
-
-        <div class="campo">
-
-
-            <label>
-                Nome do cliente
-            </label>
-
-
-            <input
-                type="text"
-                id="nomeCliente"
-                placeholder="Digite seu nome"
-            >
-
-
+      <h3>Dados do pedido</h3>
+      <div class="campo">
+        <label>Nome do cliente</label>
+        <input type="text" id="nomeCliente" placeholder="Digite seu nome" />
+      </div>
+      <div class="campo">
+        <label>Como deseja receber?</label>
+        <div class="opcoes">
+          <label class="opcao">
+            <input type="radio" name="tipoPedido" value="retirada" checked onchange="mostrarEntrega()" />
+            📦 Retirada
+          </label>
+          <label class="opcao">
+            <input type="radio" name="tipoPedido" value="entrega" onchange="mostrarEntrega()" />
+            🛵 Entrega
+          </label>
         </div>
-
-
-        <!-- ENTREGA -->
-
-        <div class="campo">
-
-
-            <label>
-                Como deseja receber?
-            </label>
-
-
-            <div class="opcoes">
-
-
-                <label class="opcao">
-
-
-                    <input
-                        type="radio"
-                        name="tipoPedido"
-                        value="retirada"
-                        checked
-                        onchange="mostrarEntrega()"
-                    >
-
-
-                    📦 Retirada
-
-
-                </label>
-
-
-                <label class="opcao">
-
-
-                    <input
-                        type="radio"
-                        name="tipoPedido"
-                        value="entrega"
-                        onchange="mostrarEntrega()"
-                    >
-
-
-                    🛵 Entrega
-
-
-                </label>
-
-
-            </div>
-
-
+      </div>
+      <div class="campo" id="campoEndereco" style="display:none;">
+        <label>Endereço para entrega</label>
+        <input type="text" id="endereco" placeholder="Rua, número, bairro..." />
+      </div>
+      <div class="campo">
+        <label>Forma de pagamento</label>
+        <div class="pagamentos">
+          <label class="pagamento">
+            <input type="radio" name="pagamento" value="Pix" onchange="mostrarTroco()" />
+            💠 Pix
+          </label>
+          <label class="pagamento">
+            <input type="radio" name="pagamento" value="Cartão" onchange="mostrarTroco()" />
+            💳 Cartão
+          </label>
+          <label class="pagamento">
+            <input type="radio" name="pagamento" value="Dinheiro" onchange="mostrarTroco()" />
+            💵 Dinheiro
+          </label>
         </div>
-
-
-        <!-- ENDEREÇO -->
-
-        <div
-            class="campo"
-            id="campoEndereco"
-            style="display:none;"
-        >
-
-
-            <label>
-                Endereço para entrega
-            </label>
-
-
-            <input
-                type="text"
-                id="endereco"
-                placeholder="Rua, número, bairro..."
-            >
-
-
+      </div>
+      <div class="campo" id="campoTroco">
+        <label>Precisa de troco?</label>
+        <div class="troco-opcoes">
+          <label class="troco-opcao">
+            <input type="radio" name="troco" value="nao" onchange="mostrarValorTroco()" />
+            Não
+          </label>
+          <label class="troco-opcao">
+            <input type="radio" name="troco" value="sim" onchange="mostrarValorTroco()" />
+            Sim
+          </label>
         </div>
-
-
-        <!-- PAGAMENTO -->
-
-        <div class="campo">
-
-
-            <label>
-                Forma de pagamento
-            </label>
-
-
-            <div class="pagamentos">
-
-
-                <label class="pagamento">
-
-
-                    <input
-                        type="radio"
-                        name="pagamento"
-                        value="Pix"
-                        onchange="mostrarTroco()"
-                    >
-
-
-                    💠 Pix
-
-
-                </label>
-
-
-                <label class="pagamento">
-
-
-                    <input
-                        type="radio"
-                        name="pagamento"
-                        value="Cartão"
-                        onchange="mostrarTroco()"
-                    >
-
-
-                    💳 Cartão
-
-
-                </label>
-
-
-                <label class="pagamento">
-
-
-                    <input
-                        type="radio"
-                        name="pagamento"
-                        value="Dinheiro"
-                        onchange="mostrarTroco()"
-                    >
-
-
-                    💵 Dinheiro
-
-
-                </label>
-
-
-            </div>
-
-
-        </div>
-
-
-        <!-- TROCO -->
-
-        <div
-            class="campo"
-            id="campoTroco"
-        >
-
-
-            <label>
-                Precisa de troco?
-            </label>
-
-
-            <div class="troco-opcoes">
-
-
-                <label class="troco-opcao">
-
-
-                    <input
-                        type="radio"
-                        name="troco"
-                        value="nao"
-                        onchange="mostrarValorTroco()"
-                    >
-
-
-                    Não
-
-
-                </label>
-
-
-                <label class="troco-opcao">
-
-
-                    <input
-                        type="radio"
-                        name="troco"
-                        value="sim"
-                        onchange="mostrarValorTroco()"
-                    >
-
-
-                    Sim
-
-
-                </label>
-
-
-            </div>
-
-
-        </div>
-
-
-        <!-- VALOR TROCO -->
-
-        <div
-            class="campo"
-            id="campoValorTroco"
-        >
-
-
-            <label>
-                Troco para quanto?
-            </label>
-
-
-            <input
-                type="number"
-                id="valorTroco"
-                step="0.01"
-                min="0"
-                placeholder="Ex.: 50,00"
-            >
-
-
-        </div>
-
-
+      </div>
+      <div class="campo" id="campoValorTroco">
+        <label>Troco para quanto?</label>
+        <input type="number" id="valorTroco" step="0.01" min="0" placeholder="Ex.: 50,00" />
+      </div>
     </div>
-
-
     <!-- =================================================
          RESUMO
     ================================================== -->
-
     <div class="resumo">
-
-
-        <div class="linha-resumo">
-
-
-            <span>
-                Subtotal
-            </span>
-
-
-            <span id="subtotal">
-                R$ 0,00
-            </span>
-
-
-        </div>
-
-
-        <div class="linha-resumo">
-
-
-            <span>
-                Entrega
-            </span>
-
-
-            <span id="taxaEntrega">
-                R$ 0,00
-            </span>
-
-
-        </div>
-
-
-        <div class="linha-total">
-
-
-            <span>
-                Total
-            </span>
-
-
-            <span
-                class="valor-total"
-                id="total"
-            >
-                R$ 0,00
-            </span>
-
-
-        </div>
-
-
-        <button
-            class="btn-finalizar"
-            onclick="finalizarPedido()"
-        >
-
-            Finalizar pedido pelo WhatsApp
-
-        </button>
-
-
+      <div class="linha-resumo">
+        <span>Subtotal</span>
+        <span id="subtotal">R$ 0,00</span>
+      </div>
+      <div class="linha-resumo">
+        <span>Entrega</span>
+        <span id="taxaEntrega">R$ 0,00</span>
+      </div>
+      <div class="linha-total">
+        <span>Total</span>
+        <span class="valor-total" id="total">R$ 0,00</span>
+      </div>
+      <button class="btn-finalizar" onclick="finalizarPedido()">Finalizar pedido pelo WhatsApp</button>
     </div>
+  </aside>
 
-
-</aside>
-
-
-<!-- =====================================================
+  <!-- =====================================================
      RODAPÉ
 ===================================================== -->
 
-<footer>
+  <footer>
+    <h2>Charme de Menina</h2>
+    <p>Beleza, semijoias e charme para você. ✨</p>
+  </footer>
 
-
-    <h2>
-        Charme de Menina
-    </h2>
-
-
-    <p>
-        Beleza, acessórios e charme para você. ✨
-    </p>
-
-
-</footer>
-
-
-<script>
+  <script>
 
 
 /* =====================================================
-   WHATSAPP
+   CONFIGURAÇÕES
 ===================================================== */
-
-
-/*
-   TROQUE PELO NÚMERO DA LOJA.
-
-   Exemplo:
-   5517999999999
-
-   Não coloque:
-   +55
-   espaços
-   parênteses
-   ou traços.
-*/
 
 const NUMERO_WHATSAPP = "5599999999999";
 
-
-/* =====================================================
-   TAXA DE ENTREGA
-===================================================== */
-
 const TAXA_ENTREGA = 3;
-
-
-/* =====================================================
-   PRODUTOS
-===================================================== */
-
-const produtos = [
-
-
-/* =====================================================
-   ACESSÓRIOS
-===================================================== */
-
-{
-    id:1,
-    nome:"Colar Delicado",
-    categoria:"acessorios",
-    tipo:"Colares",
-    preco:39.90,
-    icone:"📿"
-},
-
-{
-    id:2,
-    nome:"Tornozeleira Delicada",
-    categoria:"acessorios",
-    tipo:"Tornozeleiras",
-    preco:29.90,
-    icone:"✨"
-},
-
-{
-    id:3,
-    nome:"Brinco Dourado",
-    categoria:"acessorios",
-    tipo:"Brincos",
-    preco:24.90,
-    icone:"💎"
-},
-
-{
-    id:4,
-    nome:"Anel Delicado",
-    categoria:"acessorios",
-    tipo:"Anéis",
-    preco:29.90,
-    icone:"💍"
-},
-
-{
-    id:5,
-    nome:"Pulseira Delicada",
-    categoria:"acessorios",
-    tipo:"Pulseiras / Braceletes",
-    preco:34.90,
-    icone:"✨"
-},
-
-{
-    id:6,
-    nome:"Piercing",
-    categoria:"acessorios",
-    tipo:"Piercing",
-    preco:19.90,
-    icone:"✨"
-},
-
-{
-    id:7,
-    nome:"Relógio Feminino",
-    categoria:"acessorios",
-    tipo:"Relógios",
-    preco:79.90,
-    icone:"⌚"
-},
-
-{
-    id:8,
-    nome:"Bolsa Feminina",
-    categoria:"acessorios",
-    tipo:"Bolsas e carteiras",
-    preco:89.90,
-    icone:"👜"
-},
-
-{
-    id:9,
-    nome:"Porta-Jóias",
-    categoria:"acessorios",
-    tipo:"Porta-jóias",
-    preco:49.90,
-    icone:"🎁"
-},
-
-{
-    id:10,
-    nome:"Acessório Infantil",
-    categoria:"acessorios",
-    tipo:"Acessórios infantil",
-    preco:24.90,
-    icone:"🎀"
-},
-
-
-/* =====================================================
-   PULSEIRA PANDORA
-===================================================== */
-
-{
-    id:11,
-    nome:"Pulseira Pandora",
-    categoria:"pandora",
-    tipo:"Pulseira Pandora",
-    preco:59.90,
-    icone:"💎"
-},
-
-{
-    id:12,
-    nome:"Pulseira Pandora Delicada",
-    categoria:"pandora",
-    tipo:"Pulseira Pandora",
-    preco:69.90,
-    icone:"✨"
-},
-
-{
-    id:13,
-    nome:"Berloque Pandora",
-    categoria:"pandora",
-    tipo:"Berloques",
-    preco:29.90,
-    icone:"💖"
-},
-
-{
-    id:14,
-    nome:"Berloque Coração",
-    categoria:"pandora",
-    tipo:"Berloques",
-    preco:34.90,
-    icone:"💗"
-},
-
-
-/* =====================================================
-   MAQUIAGEM
-===================================================== */
-
-{
-    id:15,
-    nome:"Base Líquida",
-    categoria:"maquiagem",
-    tipo:"Base",
-    preco:39.90,
-    icone:"💄"
-},
-
-{
-    id:16,
-    nome:"Corretivo",
-    categoria:"maquiagem",
-    tipo:"Corretivo",
-    preco:29.90,
-    icone:"✨"
-},
-
-{
-    id:17,
-    nome:"Pó Compacto",
-    categoria:"maquiagem",
-    tipo:"Pó compacto",
-    preco:34.90,
-    icone:"💄"
-},
-
-{
-    id:18,
-    nome:"Pó Solto",
-    categoria:"maquiagem",
-    tipo:"Pó solto",
-    preco:36.90,
-    icone:"✨"
-},
-
-{
-    id:19,
-    nome:"Blush",
-    categoria:"maquiagem",
-    tipo:"Blush",
-    preco:32.90,
-    icone:"🌸"
-},
-
-{
-    id:20,
-    nome:"Contorno",
-    categoria:"maquiagem",
-    tipo:"Contorno",
-    preco:34.90,
-    icone:"💄"
-},
-
-{
-    id:21,
-    nome:"Iluminador",
-    categoria:"maquiagem",
-    tipo:"Iluminador",
-    preco:39.90,
-    icone:"✨"
-},
-
-{
-    id:22,
-    nome:"Delineador",
-    categoria:"maquiagem",
-    tipo:"Delineador",
-    preco:24.90,
-    icone:"🖤"
-},
-
-{
-    id:23,
-    nome:"Batom e Gloss",
-    categoria:"maquiagem",
-    tipo:"Batom e gloss",
-    preco:27.90,
-    icone:"💋"
-},
-
-{
-    id:24,
-    nome:"Rímel Preto e Marrom",
-    categoria:"maquiagem",
-    tipo:"Rímel preto e marrom",
-    preco:32.90,
-    icone:"👁️"
-},
-
-{
-    id:25,
-    nome:"Rímel Incolor",
-    categoria:"maquiagem",
-    tipo:"Rímel incolor",
-    preco:26.90,
-    icone:"✨"
-},
-
-{
-    id:26,
-    nome:"Paleta de Make",
-    categoria:"maquiagem",
-    tipo:"Paleta de maquiagem",
-    preco:59.90,
-    icone:"🎨"
-},
-
-
-/* =====================================================
-   SKINCARE
-===================================================== */
-
-{
-    id:27,
-    nome:"Água Micelar",
-    categoria:"skincare",
-    tipo:"Água micelar",
-    preco:29.90,
-    icone:"💧"
-},
-
-{
-    id:28,
-    nome:"Espuma de Limpeza Facial",
-    categoria:"skincare",
-    tipo:"Espuma de limpeza facial",
-    preco:34.90,
-    icone:"🫧"
-},
-
-{
-    id:29,
-    nome:"Escova de Limpeza Facial",
-    categoria:"skincare",
-    tipo:"Escova de limpeza facial",
-    preco:29.90,
-    icone:"🧖‍♀️"
-},
-
-{
-    id:30,
-    nome:"Faixa para Skincare",
-    categoria:"skincare",
-    tipo:"Faixa para skincare",
-    preco:19.90,
-    icone:"🎀"
-},
-
-{
-    id:31,
-    nome:"Esfoliante Facial",
-    categoria:"skincare",
-    tipo:"Esfoliante",
-    preco:32.90,
-    icone:"✨"
-},
-
-{
-    id:32,
-    nome:"Sérum Facial",
-    categoria:"skincare",
-    tipo:"Sérum",
-    preco:39.90,
-    icone:"💧"
-},
-
-
-/* =====================================================
-   CABELOS
-===================================================== */
-
-{
-    id:33,
-    nome:"Xuxinha de Cabelo",
-    categoria:"cabelos",
-    tipo:"Xuxinhas de cabelo",
-    preco:9.90,
-    icone:"🎀"
-},
-
-{
-    id:34,
-    nome:"Tiara",
-    categoria:"cabelos",
-    tipo:"Tiaras",
-    preco:19.90,
-    icone:"👑"
-},
-
-{
-    id:35,
-    nome:"Pincel para Cabelo",
-    categoria:"cabelos",
-    tipo:"Pincéis",
-    preco:14.90,
-    icone:"💇‍♀️"
-},
-
-{
-    id:36,
-    nome:"Escova de Cabelo",
-    categoria:"cabelos",
-    tipo:"Escova de cabelo",
-    preco:24.90,
-    icone:"💇‍♀️"
-},
-
-{
-    id:37,
-    nome:"Escova Modeladora",
-    categoria:"cabelos",
-    tipo:"Escova modeladora",
-    preco:79.90,
-    icone:"💗"
-},
-
-{
-    id:38,
-    nome:"Escova Secadora",
-    categoria:"cabelos",
-    tipo:"Escova secadora",
-    preco:129.90,
-    icone:"✨"
-},
-
-{
-    id:39,
-    nome:"Chapinha de Bolsa",
-    categoria:"cabelos",
-    tipo:"Chapinha de bolsa",
-    preco:69.90,
-    icone:"💗"
-},
-
-
-/* =====================================================
-   UNHAS
-===================================================== */
-
-{
-    id:40,
-    nome:"Canetinha Hidratante de Cutícula",
-    categoria:"unhas",
-    tipo:"Cuidados com as unhas",
-    preco:14.90,
-    icone:"💅"
-},
-
-
-/* =====================================================
-   CÍLIOS E SOBRANCELHAS
-===================================================== */
-
-{
-    id:41,
-    nome:"Cílios + Cola",
-    categoria:"cilios",
-    tipo:"Cílios e cola para cílios",
-    preco:24.90,
-    icone:"👁️"
-},
-
-{
-    id:42,
-    nome:"Navalha de Sobrancelha",
-    categoria:"cilios",
-    tipo:"Navalha de sobrancelha",
-    preco:12.90,
-    icone:"✨"
-}
-
-];
 
 
 /* =====================================================
@@ -2795,220 +2571,190 @@ function dinheiro(valor){
 
 
 /* =====================================================
-   NOME DAS CATEGORIAS
+   NOMES DAS CATEGORIAS
 ===================================================== */
 
-function nomeCategoria(categoria){
+const nomesCategorias = {
 
-    const nomes = {
+    conjuntos: "Conjuntos",
 
-        acessorios:"Acessórios",
+    brincos: "Brincos",
 
-        pandora:"Pulseira Pandora",
+    colares: "Colares",
 
-        maquiagem:"Maquiagem",
+    "acessorios-infantil": "Acessórios Infantil",
 
-        skincare:"Skincare",
+    relogios: "Relógios",
 
-        cabelos:"Cabelos",
+    pulseiras: "Pulseiras / Braceletes",
 
-        unhas:"Unhas",
+    pandora: "Pulseira Pandora",
 
-        cilios:"Cílios & Sobrancelhas"
+    maquiagem: "Maquiagem",
 
-    };
+    skincare: "Skincare",
+
+    cabelos: "Cabelos",
+
+    unhas: "Unhas",
+
+    cilios: "Cílios & Sobrancelhas"
+
+};
 
 
-    return nomes[categoria] || "Produtos";
+/* =====================================================
+   DESCRIÇÕES
+===================================================== */
+
+const descricoesCategorias = {
+
+    conjuntos:
+    "Conjuntos perfeitos e combinações prontas para realçar seu look.",
+
+    brincos:
+    "Brincos, argolas e pontos de luz cheios de estilo e leveza.",
+
+    colares:
+    "Colares delicados, chokers e correntes cheias de charme.",
+
+    "acessorios-infantil":
+    "Peças lúdicas, fofas e delicadas especialmente para as crianças.",
+
+    relogios:
+    "Relógios femininos elegantes e modernos.",
+
+    pulseiras:
+    "Pulseiras, braceletes e tornozeleiras para enriquecer seu visual.",
+
+    pandora:
+    "Pulseiras e berloques para deixar seu estilo ainda mais especial.",
+
+    maquiagem:
+    "Tudo para deixar sua make ainda mais linda.",
+
+    skincare:
+    "Cuidados especiais para sua rotina de beleza.",
+
+    cabelos:
+    "Produtos e acessórios para cuidar dos seus cabelos.",
+
+    unhas:
+    "Cuidados delicados para suas unhas.",
+
+    cilios:
+    "Produtos para destacar seus olhos e sobrancelhas."
+
+};
+
+
+/* =====================================================
+   DESLIZAR MENU AUTOMÁTICO AO CLICAR
+===================================================== */
+
+function centralizarBotaoMenu(botao){
+
+    if(!botao) return;
+
+    botao.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest'
+    });
 
 }
 
 
 /* =====================================================
-   DESCRIÇÃO DAS CATEGORIAS
-===================================================== */
-
-function descricaoCategoria(categoria){
-
-    const descricoes = {
-
-        acessorios:
-        "Acessórios delicados para completar seu estilo.",
-
-        pandora:
-        "Pulseiras e berloques para deixar seu estilo ainda mais especial.",
-
-        maquiagem:
-        "Tudo para deixar sua make ainda mais linda.",
-
-        skincare:
-        "Cuidados especiais para sua rotina de beleza.",
-
-        cabelos:
-        "Produtos e acessórios para cuidar dos seus cabelos.",
-
-        unhas:
-        "Cuidados delicados para suas unhas.",
-
-        cilios:
-        "Produtos para destacar seus olhos e sobrancelhas."
-
-    };
-
-
-    return descricoes[categoria] || "";
-
-}
-
-
-/* =====================================================
-   MOSTRAR PRODUTOS
-===================================================== */
-
-function mostrarProdutos(categoria){
-
-    const lista =
-        document.getElementById(
-            "listaProdutos"
-        );
-
-
-    const produtosFiltrados =
-        produtos.filter(
-            produto =>
-            produto.categoria === categoria
-        );
-
-
-    document.getElementById(
-        "tituloCategoria"
-    ).textContent =
-        nomeCategoria(categoria);
-
-
-    document.getElementById(
-        "descricaoCategoria"
-    ).textContent =
-        descricaoCategoria(categoria);
-
-
-    if(produtosFiltrados.length === 0){
-
-        lista.innerHTML = `
-
-            <div class="sem-produtos">
-
-                <h3>
-                    Nenhum produto encontrado
-                </h3>
-
-                <p>
-                    Em breve teremos novidades nessa categoria. 💗
-                </p>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    lista.innerHTML =
-
-        produtosFiltrados.map(produto => `
-
-            <article class="produto">
-
-
-                <div class="imagem-produto">
-
-                    <div class="icone-produto">
-                        ${produto.icone}
-                    </div>
-
-                </div>
-
-
-                <div class="info-produto">
-
-
-                    <span class="categoria-produto">
-                        ${produto.tipo}
-                    </span>
-
-
-                    <h3>
-                        ${produto.nome}
-                    </h3>
-
-
-                    <div class="preco">
-                        ${dinheiro(produto.preco)}
-                    </div>
-
-
-                    <button
-                        class="btn-adicionar"
-                        onclick="adicionarCarrinho(${produto.id})"
-                    >
-
-                        Adicionar ao carrinho
-
-                    </button>
-
-
-                </div>
-
-
-            </article>
-
-        `).join("");
-
-}
-
-
-/* =====================================================
-   FILTRAR
+   FILTRAR PRODUTOS
 ===================================================== */
 
 function filtrar(categoria, botao){
 
-
     document
-        .querySelectorAll(
-            ".menu-categorias button"
-        )
-        .forEach(btn => {
+        .querySelectorAll(".menu-categorias button")
+        .forEach(function(btn){
 
             btn.classList.remove("ativa");
 
         });
 
+    if(botao){
 
-    botao.classList.add("ativa");
+        botao.classList.add("ativa");
 
+        centralizarBotaoMenu(botao);
 
-    mostrarProdutos(categoria);
-
-
-    /*
-       Faz a página ir para a área dos produtos.
-       O menu continua fixo na tela.
-    */
+    }
 
     document
-        .getElementById("produtos")
-        .scrollIntoView({
-            behavior:"smooth"
+        .querySelectorAll(".card")
+        .forEach(function(card){
+
+            if(
+                card.dataset.categoria === categoria
+            ){
+
+                card.classList.remove("oculto");
+
+            }else{
+
+                card.classList.add("oculto");
+
+            }
+
         });
+
+
+    document.getElementById(
+        "tituloCategoria"
+    ).textContent =
+        nomesCategorias[categoria] || "Produtos";
+
+
+    document.getElementById(
+        "descricaoCategoria"
+    ).textContent =
+        descricoesCategorias[categoria] || "";
 
 }
 
 
 /* =====================================================
-   BOTÃO VER PRODUTOS
+   SISTEMA DE ARRASTADO (DRAG-TO-SCROLL) PARA O MENU
+===================================================== */
+
+const menuContainer = document.getElementById("menuCategorias");
+
+let estaPressionado = false;
+let pontoInicialX;
+let rolagemInicialX;
+
+menuContainer.addEventListener("mousedown", (e) => {
+    estaPressionado = true;
+    pontoInicialX = e.pageX - menuContainer.offsetLeft;
+    rolagemInicialX = menuContainer.scrollLeft;
+});
+
+menuContainer.addEventListener("mouseleave", () => {
+    estaPressionado = false;
+});
+
+menuContainer.addEventListener("mouseup", () => {
+    estaPressionado = false;
+});
+
+menuContainer.addEventListener("mousemove", (e) => {
+    if(!estaPressionado) return;
+    e.preventDefault();
+    const x = e.pageX - menuContainer.offsetLeft;
+    const distancia = (x - pontoInicialX) * 2;
+    menuContainer.scrollLeft = rolagemInicialX - distancia;
+});
+
+
+/* =====================================================
+   VER PRODUTOS
 ===================================================== */
 
 function irParaProdutos(){
@@ -3023,21 +2769,57 @@ function irParaProdutos(){
 
 
 /* =====================================================
+   ADICIONAR PELO CARD
+===================================================== */
+
+function adicionarDoCard(botao){
+
+    const card = botao.closest(".card");
+
+    if(!card){
+        return;
+    }
+
+
+    const nome =
+        card.dataset.name;
+
+
+    const preco =
+        parseFloat(card.dataset.price);
+
+
+    const imagem =
+        card.dataset.image ||
+        card.querySelector("img")?.src ||
+        "";
+
+
+    adicionarCarrinho(
+        nome,
+        preco,
+        imagem
+    );
+
+}
+
+
+/* =====================================================
    ADICIONAR AO CARRINHO
 ===================================================== */
 
-function adicionarCarrinho(id){
-
-    const produto =
-        produtos.find(
-            item => item.id === id
-        );
-
+function adicionarCarrinho(
+    nome,
+    preco,
+    imagem
+){
 
     const existente =
-        carrinho.find(
-            item => item.id === id
-        );
+        carrinho.find(function(item){
+
+            return item.nome === nome;
+
+        });
 
 
     if(existente){
@@ -3048,7 +2830,11 @@ function adicionarCarrinho(id){
 
         carrinho.push({
 
-            ...produto,
+            nome:nome,
+
+            preco:preco,
+
+            imagem:imagem,
 
             quantidade:1
 
@@ -3059,30 +2845,22 @@ function adicionarCarrinho(id){
 
     atualizarCarrinho();
 
-
     abrirCarrinho();
 
 }
 
 
 /* =====================================================
-   AUMENTAR
+   AUMENTAR QUANTIDADE
 ===================================================== */
 
-function aumentar(id){
+function aumentar(index){
 
-    const item =
-        carrinho.find(
-            produto => produto.id === id
-        );
+    if(carrinho[index]){
 
-
-    if(item){
-
-        item.quantidade++;
+        carrinho[index].quantidade++;
 
     }
-
 
     atualizarCarrinho();
 
@@ -3090,29 +2868,24 @@ function aumentar(id){
 
 
 /* =====================================================
-   DIMINUIR
+   DIMINUIR QUANTIDADE
 ===================================================== */
 
-function diminuir(id){
+function diminuir(index){
 
-    const item =
-        carrinho.find(
-            produto => produto.id === id
-        );
-
-
-    if(!item) return;
+    if(!carrinho[index]){
+        return;
+    }
 
 
-    item.quantidade--;
+    carrinho[index].quantidade--;
 
 
-    if(item.quantidade <= 0){
+    if(
+        carrinho[index].quantidade <= 0
+    ){
 
-        carrinho =
-            carrinho.filter(
-                produto => produto.id !== id
-            );
+        carrinho.splice(index,1);
 
     }
 
@@ -3136,9 +2909,15 @@ function atualizarCarrinho(){
 
     const quantidade =
         carrinho.reduce(
-            (total,item) =>
-            total + item.quantidade,
+
+            function(total,item){
+
+                return total + item.quantidade;
+
+            },
+
             0
+
         );
 
 
@@ -3177,21 +2956,27 @@ function atualizarCarrinho(){
 
     }else{
 
+        lista.innerHTML = "";
 
-        lista.innerHTML =
 
-            carrinho.map(item => `
+        carrinho.forEach(function(item,index){
+
+            lista.innerHTML += `
 
                 <div class="item-carrinho">
 
 
                     <div class="item-icone">
-                        ${item.icone}
+
+                        <img
+                            src="${item.imagem}"
+                            alt="${item.nome}"
+                        >
+
                     </div>
 
 
                     <div class="item-info">
-
 
                         <h4>
                             ${item.nome}
@@ -3199,15 +2984,16 @@ function atualizarCarrinho(){
 
 
                         <div class="item-preco">
+
                             ${dinheiro(item.preco)}
+
                         </div>
 
 
                         <div class="controles">
 
-
                             <button
-                                onclick="diminuir(${item.id})"
+                                onclick="diminuir(${index})"
                             >
                                 −
                             </button>
@@ -3219,14 +3005,12 @@ function atualizarCarrinho(){
 
 
                             <button
-                                onclick="aumentar(${item.id})"
+                                onclick="aumentar(${index})"
                             >
                                 +
                             </button>
 
-
                         </div>
-
 
                     </div>
 
@@ -3243,7 +3027,9 @@ function atualizarCarrinho(){
 
                 </div>
 
-            `).join("");
+            `;
+
+        });
 
     }
 
@@ -3261,13 +3047,15 @@ function calcularSubtotal(){
 
     return carrinho.reduce(
 
-        (total,item) =>
+        function(total,item){
 
-        total +
-        (
-            item.preco *
-            item.quantidade
-        ),
+            return total +
+                (
+                    item.preco *
+                    item.quantidade
+                );
+
+        },
 
         0
 
@@ -3414,10 +3202,11 @@ function mostrarTroco(){
 
         document.querySelectorAll(
             'input[name="troco"]'
-        ).forEach(
-            radio =>
-            radio.checked = false
-        );
+        ).forEach(function(radio){
+
+            radio.checked = false;
+
+        });
 
     }
 
@@ -3425,7 +3214,7 @@ function mostrarTroco(){
 
 
 /* =====================================================
-   VALOR DO TROCO
+   MOSTRAR VALOR DO TROCO
 ===================================================== */
 
 function mostrarValorTroco(){
@@ -3515,7 +3304,6 @@ function fecharCarrinho(){
 
 function finalizarPedido(){
 
-
     if(carrinho.length === 0){
 
         alert(
@@ -3541,11 +3329,9 @@ function finalizarPedido(){
             "Digite o nome do cliente."
         );
 
-
         document
             .getElementById("nomeCliente")
             .focus();
-
 
         return;
 
@@ -3575,11 +3361,9 @@ function finalizarPedido(){
             "Digite o endereço para entrega."
         );
 
-
         document
             .getElementById("endereco")
             .focus();
-
 
         return;
 
@@ -3641,8 +3425,7 @@ function finalizarPedido(){
         "*PRODUTOS*\n";
 
 
-    carrinho.forEach(item => {
-
+    carrinho.forEach(function(item){
 
         const subtotalItem =
             item.preco *
@@ -3833,14 +3616,14 @@ function finalizarPedido(){
 
 
 /* =====================================================
-   INICIAR
+   INICIAR SITE
 ===================================================== */
 
-mostrarProdutos("acessorios");
+const primeiroBotao = document.querySelector('.menu-categorias button');
+filtrar('conjuntos', primeiroBotao);
 
 atualizarCarrinho();
-
-</script>
+  </script>
 
 </body>
 
