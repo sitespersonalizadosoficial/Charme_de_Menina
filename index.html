@@ -480,15 +480,16 @@
     }
 
     /* =====================================================
-       CARRINHO
+       CARRINHO ESTRUTURA FIXA
     ===================================================== */
     .carrinho {
       position: fixed;
       top: 0;
-      right: -470px;
+      right: -100%;
       width: 450px;
       max-width: 100%;
       height: 100vh;
+      height: 100dvh;
       background: white;
       z-index: 1999;
       display: flex;
@@ -501,9 +502,6 @@
       right: 0;
     }
 
-    /* =====================================================
-       CABEÇALHO CARRINHO
-    ===================================================== */
     .cabecalho-carrinho {
       background: var(--preto);
       color: white;
@@ -511,6 +509,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-shrink: 0;
     }
 
     .cabecalho-carrinho h2 {
@@ -530,12 +529,15 @@
       color: #f28aad;
     }
 
-    /* =====================================================
-       ITENS CARRINHO & BOTÃO REMOVER (LIXO)
-    ===================================================== */
-    .itens-carrinho {
+    /* CORPO ROLÁVEL DO CARRINHO */
+    .corpo-carrinho {
       flex: 1;
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* ITENS CARRINHO & LIXINHO */
+    .itens-carrinho {
       padding: 18px;
     }
 
@@ -612,7 +614,6 @@
       text-align: center;
     }
 
-    /* ESTILO DO LIXINHO DE REMOVER */
     .btn-remover-item {
       background: transparent;
       border: none;
@@ -633,15 +634,11 @@
       transform: scale(1.15);
     }
 
-    /* =====================================================
-       DADOS DO PEDIDO
-    ===================================================== */
+    /* DADOS DO PEDIDO */
     .dados-pedido {
       border-top: 1px solid #eee;
       padding: 18px;
       background: var(--rosa-suave);
-      max-height: 48vh;
-      overflow-y: auto;
     }
 
     .dados-pedido h3 {
@@ -677,9 +674,7 @@
       box-shadow: 0 0 0 2px rgba(217, 79, 131, .08);
     }
 
-    /* =====================================================
-       RETIRADA / ENTREGA
-    ===================================================== */
+    /* RETIRADA / ENTREGA */
     .opcoes {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -706,9 +701,7 @@
       font-weight: bold;
     }
 
-    /* =====================================================
-       PAGAMENTO
-    ===================================================== */
+    /* PAGAMENTO */
     .pagamentos {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -735,9 +728,7 @@
       font-weight: bold;
     }
 
-    /* =====================================================
-       TROCO
-    ===================================================== */
+    /* TROCO */
     #campoTroco,
     #campoValorTroco {
       display: none;
@@ -768,13 +759,13 @@
       background: var(--rosa-claro);
     }
 
-    /* =====================================================
-       RESUMO
-    ===================================================== */
+    /* RESUMO FIXO NO RODAPÉ DO CARRINHO */
     .resumo {
       padding: 18px;
       border-top: 1px solid #eadde2;
       background: white;
+      flex-shrink: 0;
+      box-shadow: 0 -4px 15px rgba(0, 0, 0, .05);
     }
 
     .linha-resumo {
@@ -805,13 +796,11 @@
       font-weight: bold;
     }
 
-    /* =====================================================
-       FINALIZAR
-    ===================================================== */
+    /* FINALIZAR */
     .btn-finalizar {
       width: 100%;
       padding: 14px;
-      margin-top: 14px;
+      margin-top: 12px;
       border: 0;
       border-radius: 10px;
       background: #25D366;
@@ -819,6 +808,7 @@
       font-weight: bold;
       cursor: pointer;
       font-size: 15px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
     }
 
     .btn-finalizar:hover {
@@ -966,10 +956,6 @@
       .carrinho {
         width: 100%;
       }
-
-      .dados-pedido {
-        max-height: 50vh;
-      }
     }
 
     @media(max-width:380px) {
@@ -1054,7 +1040,7 @@
     <div class="lista-produtos" id="listaProdutos">
 
       <!-- ==================== CONJUNTOS ==================== -->
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 1" data-price="40.00" data-image="conjunto1.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="40.00" data-image="conjunto1.jpeg">
         <div class="card-image">
           <img src="conjunto1.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1067,33 +1053,33 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco Semijoia 1" data-price="250.00" data-image="conjuntosemijoia1.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco Semijoia" data-price="250.00" data-image="conjuntosemijoia1.jpeg">
         <div class="card-image">
           <img src="conjuntosemijoia1.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
         <div class="card-content">
           <span class="card-category">Conjuntos</span>
-          <h3>Conjunto Colar e Brinco</h3>
+          <h3>Conjunto Colar e Brinco Semijoia</h3>
           <p>Conjunto semi joia, banhado com 10 milésimo de ouro 18k</p>
           <div class="price">R$ 250,00</div>
           <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco Semijoia 2" data-price="250.00" data-image="conjuntosemijoia2.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco Semijoia" data-price="250.00" data-image="conjuntosemijoia2.jpeg">
         <div class="card-image">
           <img src="conjuntosemijoia2.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
         <div class="card-content">
           <span class="card-category">Conjuntos</span>
-          <h3>Conjunto Colar e Brinco</h3>
+          <h3>Conjunto Colar e Brinco Semijoia</h3>
           <p>Conjunto semi joia, banhado com 10 milésimo de ouro 18k</p>
           <div class="price">R$ 250,00</div>
           <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 2" data-price="35.00" data-image="conjunto2.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="35.00" data-image="conjunto2.jpeg">
         <div class="card-image">
           <img src="conjunto2.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1106,7 +1092,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 3" data-price="35.00" data-image="conjunto3.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="35.00" data-image="conjunto3.jpeg">
         <div class="card-image">
           <img src="conjunto3.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1119,7 +1105,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 4" data-price="35.00" data-image="conjunto4.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="35.00" data-image="conjunto4.jpeg">
         <div class="card-image">
           <img src="conjunto4.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1132,7 +1118,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 5" data-price="35.00" data-image="conjunto5.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="35.00" data-image="conjunto5.jpeg">
         <div class="card-image">
           <img src="conjunto5.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1145,7 +1131,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 6" data-price="35.00" data-image="conjunto6.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="35.00" data-image="conjunto6.jpeg">
         <div class="card-image">
           <img src="conjunto6.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1158,7 +1144,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 7" data-price="20.00" data-image="conjunto7.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="20.00" data-image="conjunto7.jpeg">
         <div class="card-image">
           <img src="conjunto7.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1171,7 +1157,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 8" data-price="20.00" data-image="conjunto8.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="20.00" data-image="conjunto8.jpeg">
         <div class="card-image">
           <img src="conjunto8.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1184,7 +1170,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 9" data-price="20.00" data-image="conjunto9.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="20.00" data-image="conjunto9.jpeg">
         <div class="card-image">
           <img src="conjunto9.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1197,7 +1183,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 10" data-price="20.00" data-image="conjunto10.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="20.00" data-image="conjunto10.jpeg">
         <div class="card-image">
           <img src="conjunto10.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1210,7 +1196,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 11" data-price="20.00" data-image="conjunto11.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="20.00" data-image="conjunto11.jpeg">
         <div class="card-image">
           <img src="conjunto11.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1223,7 +1209,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 12" data-price="40.00" data-image="conjunto12.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="40.00" data-image="conjunto12.jpeg">
         <div class="card-image">
           <img src="conjunto12.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1236,7 +1222,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 13" data-price="40.00" data-image="conjunto13.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="40.00" data-image="conjunto13.jpeg">
         <div class="card-image">
           <img src="conjunto13.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
@@ -1249,13 +1235,13 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco 14" data-price="30.00" data-image="conjunto14.jpeg">
+      <div class="card" data-categoria="conjuntos" data-name="Conjunto Colar e Brinco" data-price="30.00" data-image="conjunto14.jpeg">
         <div class="card-image">
           <img src="conjunto14.jpeg" alt="Conjunto Colar e Brinco" />
         </div>
         <div class="card-content">
           <span class="card-category">Conjuntos</span>
-          <h3>Conjunto</h3>
+          <h3>Conjunto Colar e Brinco</h3>
           <p>Colar e brinco aço inoxidável</p>
           <div class="price">R$ 30,00</div>
           <button class="btn-add" onclick="adicionarDoCard(this)">Adicionar ao Carrinho</button>
@@ -1263,7 +1249,7 @@
       </div>
 
       <!-- ==================== BRINCOS / PIERCING ==================== -->
-      <div class="card" data-categoria="brincos" data-name="Brinco Trio" data-price="73.00" data-image="brinco1.jpeg">
+      <div class="card" data-categoria="brincos" data-name="Trio brinco Semi jóia" data-price="73.00" data-image="brinco1.jpeg">
         <div class="card-image">
           <img src="brinco1.jpeg" alt="Brinco trio" />
         </div>
@@ -1289,7 +1275,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="brincos" data-name="Trio Brinco Semi jóia Delicado" data-price="73.00" data-image="brinco3.jpeg">
+      <div class="card" data-categoria="brincos" data-name="Trio de Brincos Semi jóia Delicado" data-price="73.00" data-image="brinco3.jpeg">
         <div class="card-image">
           <img src="brinco3.jpeg" alt="brinco delicado" />
         </div>
@@ -1380,7 +1366,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="brincos" data-name="Piercing Borboleta Trágus" data-price="20.00" data-image="piercing5.jpeg">
+      <div class="card" data-categoria="brincos" data-name="Piercing Borboleta" data-price="20.00" data-image="piercing5.jpeg">
         <div class="card-image">
           <img src="piercing5.jpeg" alt="Piercing" />
         </div>
@@ -1432,7 +1418,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="brincos" data-name="Piercing Trágus delicado" data-price="20.00" data-image="piercing9.jpeg">
+      <div class="card" data-categoria="brincos" data-name="Piercing Trágus" data-price="20.00" data-image="piercing9.jpeg">
         <div class="card-image">
           <img src="piercing9.jpeg" alt="Piercing" />
         </div>
@@ -1459,7 +1445,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 1" data-price="150.00" data-image="colarsemijoia.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="150.00" data-image="colarsemijoia.jpeg">
         <div class="card-image">
           <img src="colarsemijoia.jpeg" alt="Colar Delicado" />
         </div>
@@ -1472,7 +1458,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 2" data-price="180.00" data-image="colarsemijoia1.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="180.00" data-image="colarsemijoia1.jpeg">
         <div class="card-image">
           <img src="colarsemijoia1.jpeg" alt="Colar Delicado" />
         </div>
@@ -1485,7 +1471,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 3" data-price="140.00" data-image="colarsemijoia2.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="140.00" data-image="colarsemijoia2.jpeg">
         <div class="card-image">
           <img src="colarsemijoia2.jpeg" alt="Colar Delicado" />
         </div>
@@ -1498,7 +1484,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 4" data-price="180.00" data-image="colarsemijoia3.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="180.00" data-image="colarsemijoia3.jpeg">
         <div class="card-image">
           <img src="colarsemijoia3.jpeg" alt="Colar Delicado" />
         </div>
@@ -1511,7 +1497,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 5" data-price="180.00" data-image="colarsemijoia4.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="180.00" data-image="colarsemijoia4.jpeg">
         <div class="card-image">
           <img src="colarsemijoia4.jpeg" alt="Colar Delicado" />
         </div>
@@ -1524,7 +1510,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 6" data-price="180.00" data-image="colarsemijoia5.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="180.00" data-image="colarsemijoia5.jpeg">
         <div class="card-image">
           <img src="colarsemijoia5.jpeg" alt="Colar Delicado" />
         </div>
@@ -1537,7 +1523,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 7" data-price="150.00" data-image="colarsemijoia6.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="150.00" data-image="colarsemijoia6.jpeg">
         <div class="card-image">
           <img src="colarsemijoia6.jpeg" alt="Colar Delicado" />
         </div>
@@ -1550,7 +1536,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Semijoia Ouro 8" data-price="180.00" data-image="colarsemijoia7.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Semijoia" data-price="180.00" data-image="colarsemijoia7.jpeg">
         <div class="card-image">
           <img src="colarsemijoia7.jpeg" alt="Colar Delicado" />
         </div>
@@ -1563,7 +1549,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Choker 1" data-price="30.00" data-image="colarchoker1.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Choker" data-price="30.00" data-image="colarchoker1.jpeg">
         <div class="card-image">
           <img src="colarchoker1.jpeg" alt="Colar Delicado" />
         </div>
@@ -1576,7 +1562,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Duplo 2" data-price="20.00" data-image="colarduplo2.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Duplo" data-price="20.00" data-image="colarduplo2.jpeg">
         <div class="card-image">
           <img src="colarduplo2.jpeg" alt="Colar Delicado" />
         </div>
@@ -1589,7 +1575,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 3" data-price="25.00" data-image="colar3.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar delicado" data-price="25.00" data-image="colar3.jpeg">
         <div class="card-image">
           <img src="colar3.jpeg" alt="Colar Delicado" />
         </div>
@@ -1602,7 +1588,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 4" data-price="30.00" data-image="colar4.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar delicado" data-price="30.00" data-image="colar4.jpeg">
         <div class="card-image">
           <img src="colar4.jpeg" alt="Colar Delicado" />
         </div>
@@ -1615,7 +1601,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Choker 2" data-price="35.00" data-image="colarchoker2.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Choker" data-price="35.00" data-image="colarchoker2.jpeg">
         <div class="card-image">
           <img src="colarchoker2.jpeg" alt="Colar Delicado" />
         </div>
@@ -1628,7 +1614,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 5" data-price="25.00" data-image="colar5.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="25.00" data-image="colar5.jpeg">
         <div class="card-image">
           <img src="colar5.jpeg" alt="Colar Delicado" />
         </div>
@@ -1641,7 +1627,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 6" data-price="25.00" data-image="colar6.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="25.00" data-image="colar6.jpeg">
         <div class="card-image">
           <img src="colar6.jpeg" alt="Colar Delicado" />
         </div>
@@ -1654,7 +1640,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 7" data-price="30.00" data-image="colar7.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="30.00" data-image="colar7.jpeg">
         <div class="card-image">
           <img src="colar7.jpeg" alt="Colar Delicado" />
         </div>
@@ -1667,7 +1653,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 8" data-price="30.00" data-image="colar8.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar8.jpeg">
         <div class="card-image">
           <img src="colar8.jpeg" alt="Colar Delicado" />
         </div>
@@ -1680,7 +1666,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 9" data-price="30.00" data-image="colar9.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar9.jpeg">
         <div class="card-image">
           <img src="colar9.jpeg" alt="Colar Delicado" />
         </div>
@@ -1693,7 +1679,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 10" data-price="30.00" data-image="colar10.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar10.jpeg">
         <div class="card-image">
           <img src="colar10.jpeg" alt="Colar Delicado" />
         </div>
@@ -1706,7 +1692,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 11" data-price="30.00" data-image="colar11.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar11.jpeg">
         <div class="card-image">
           <img src="colar11.jpeg" alt="Colar Delicado" />
         </div>
@@ -1719,7 +1705,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 12" data-price="30.00" data-image="colar12.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar12.jpeg">
         <div class="card-image">
           <img src="colar12.jpeg" alt="Colar Delicado" />
         </div>
@@ -1732,7 +1718,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 13" data-price="30.00" data-image="colar13.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar13.jpeg">
         <div class="card-image">
           <img src="colar13.jpeg" alt="Colar Delicado" />
         </div>
@@ -1745,7 +1731,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Delicado 14" data-price="30.00" data-image="colar14.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Delicado" data-price="30.00" data-image="colar14.jpeg">
         <div class="card-image">
           <img src="colar14.jpeg" alt="Colar Delicado" />
         </div>
@@ -1758,7 +1744,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 15" data-price="30.00" data-image="colar15.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="30.00" data-image="colar15.jpeg">
         <div class="card-image">
           <img src="colar15.jpeg" alt="Colar Delicado" />
         </div>
@@ -1771,7 +1757,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 16" data-price="40.00" data-image="colar16.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar16.jpeg">
         <div class="card-image">
           <img src="colar16.jpeg" alt="Colar Delicado" />
         </div>
@@ -1784,7 +1770,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 17" data-price="40.00" data-image="colar17.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar17.jpeg">
         <div class="card-image">
           <img src="colar17.jpeg" alt="Colar Delicado" />
         </div>
@@ -1797,7 +1783,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 18" data-price="40.00" data-image="colar18.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar18.jpeg">
         <div class="card-image">
           <img src="colar18.jpeg" alt="Colar Delicado" />
         </div>
@@ -1810,7 +1796,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 19" data-price="40.00" data-image="colar19.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar19.jpeg">
         <div class="card-image">
           <img src="colar19.jpeg" alt="Colar Delicado" />
         </div>
@@ -1823,7 +1809,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 20" data-price="40.00" data-image="colar20.png">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar20.png">
         <div class="card-image">
           <img src="colar20.png" alt="Colar Delicado" />
         </div>
@@ -1836,7 +1822,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 21" data-price="40.00" data-image="colar21.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar21.jpeg">
         <div class="card-image">
           <img src="colar21.jpeg" alt="Colar Delicado" />
         </div>
@@ -1849,7 +1835,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 22" data-price="40.00" data-image="colar22.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar22.jpeg">
         <div class="card-image">
           <img src="colar22.jpeg" alt="Colar Delicado" />
         </div>
@@ -1862,7 +1848,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 23" data-price="40.00" data-image="colar23.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="40.00" data-image="colar23.jpeg">
         <div class="card-image">
           <img src="colar23.jpeg" alt="Colar Delicado" />
         </div>
@@ -1875,7 +1861,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Duplo 3" data-price="30.00" data-image="colarduplo3.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Duplo" data-price="30.00" data-image="colarduplo3.jpeg">
         <div class="card-image">
           <img src="colarduplo3.jpeg" alt="Colar Delicado" />
         </div>
@@ -1888,7 +1874,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Duplo 4" data-price="35.00" data-image="colarduplo4.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Duplo" data-price="35.00" data-image="colarduplo4.jpeg">
         <div class="card-image">
           <img src="colarduplo4.jpeg" alt="Colar Delicado" />
         </div>
@@ -1901,7 +1887,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 24" data-price="35.00" data-image="colar24.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="35.00" data-image="colar24.jpeg">
         <div class="card-image">
           <img src="colar24.jpeg" alt="Colar Delicado" />
         </div>
@@ -1914,7 +1900,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 25" data-price="20.00" data-image="colar25.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar25.jpeg">
         <div class="card-image">
           <img src="colar25.jpeg" alt="Colar Delicado" />
         </div>
@@ -1927,7 +1913,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 26" data-price="25.00" data-image="colar26.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="25.00" data-image="colar26.jpeg">
         <div class="card-image">
           <img src="colar26.jpeg" alt="Colar Delicado" />
         </div>
@@ -1953,7 +1939,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 29" data-price="30.00" data-image="colar29.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="30.00" data-image="colar29.jpeg">
         <div class="card-image">
           <img src="colar29.jpeg" alt="Colar Delicado" />
         </div>
@@ -1966,7 +1952,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 30" data-price="20.00" data-image="colar30.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar30.jpeg">
         <div class="card-image">
           <img src="colar30.jpeg" alt="Colar Delicado" />
         </div>
@@ -1979,7 +1965,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 31" data-price="20.00" data-image="colar31.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar31.jpeg">
         <div class="card-image">
           <img src="colar31.jpeg" alt="Colar Delicado" />
         </div>
@@ -1992,7 +1978,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 32" data-price="20.00" data-image="colar32.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar32.jpeg">
         <div class="card-image">
           <img src="colar32.jpeg" alt="Colar Delicado" />
         </div>
@@ -2005,7 +1991,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 33" data-price="20.00" data-image="colar33.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar33.jpeg">
         <div class="card-image">
           <img src="colar33.jpeg" alt="Colar Delicado" />
         </div>
@@ -2018,7 +2004,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 34" data-price="20.00" data-image="colar34.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar34.jpeg">
         <div class="card-image">
           <img src="colar34.jpeg" alt="Colar Delicado" />
         </div>
@@ -2031,7 +2017,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 35" data-price="20.00" data-image="colar35.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar35.jpeg">
         <div class="card-image">
           <img src="colar35.jpeg" alt="Colar Delicado" />
         </div>
@@ -2044,7 +2030,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 36" data-price="20.00" data-image="colar36.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar36.jpeg">
         <div class="card-image">
           <img src="colar36.jpeg" alt="Colar Delicado" />
         </div>
@@ -2057,7 +2043,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 37" data-price="20.00" data-image="colar37.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar37.jpeg">
         <div class="card-image">
           <img src="colar37.jpeg" alt="Colar Delicado" />
         </div>
@@ -2070,7 +2056,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="colares" data-name="Colar Aço 38" data-price="20.00" data-image="colar38.jpeg">
+      <div class="card" data-categoria="colares" data-name="Colar Aço" data-price="20.00" data-image="colar38.jpeg">
         <div class="card-image">
           <img src="colar38.jpeg" alt="Colar Delicado" />
         </div>
@@ -2084,7 +2070,7 @@
       </div>
 
       <!-- ==================== ANÉIS ==================== -->
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 1" data-price="15.00" data-image="aneis1.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis1.jpeg">
         <div class="card-image">
           <img src="aneis1.jpeg" alt="Anéis delicados" />
         </div>
@@ -2097,7 +2083,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 2" data-price="15.00" data-image="aneis2.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis2.jpeg">
         <div class="card-image">
           <img src="aneis2.jpeg" alt="Anéis delicados" />
         </div>
@@ -2110,7 +2096,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 3" data-price="15.00" data-image="aneis3.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis3.jpeg">
         <div class="card-image">
           <img src="aneis3.jpeg" alt="Anéis delicados" />
         </div>
@@ -2123,7 +2109,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 4" data-price="15.00" data-image="aneis4.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis4.jpeg">
         <div class="card-image">
           <img src="aneis4.jpeg" alt="Anéis delicados" />
         </div>
@@ -2136,7 +2122,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 5" data-price="15.00" data-image="aneis5.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis5.jpeg">
         <div class="card-image">
           <img src="aneis5.jpeg" alt="Anéis delicados" />
         </div>
@@ -2149,7 +2135,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 6" data-price="15.00" data-image="aneis6.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis6.jpeg">
         <div class="card-image">
           <img src="aneis6.jpeg" alt="Anéis delicados" />
         </div>
@@ -2162,7 +2148,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 7" data-price="15.00" data-image="aneis7.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis7.jpeg">
         <div class="card-image">
           <img src="aneis7.jpeg" alt="Anéis delicados" />
         </div>
@@ -2175,7 +2161,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 8" data-price="15.00" data-image="aneis8.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis8.jpeg">
         <div class="card-image">
           <img src="aneis8.jpeg" alt="Anéis delicados" />
         </div>
@@ -2188,7 +2174,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 9" data-price="15.00" data-image="aneis9.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis9.jpeg">
         <div class="card-image">
           <img src="aneis9.jpeg" alt="Anéis delicados" />
         </div>
@@ -2201,7 +2187,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 10" data-price="15.00" data-image="aneis10.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis10.jpeg">
         <div class="card-image">
           <img src="aneis10.jpeg" alt="Anéis delicados" />
         </div>
@@ -2214,7 +2200,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 11" data-price="15.00" data-image="aneis11.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis11.jpeg">
         <div class="card-image">
           <img src="aneis11.jpeg" alt="Anéis delicados" />
         </div>
@@ -2227,7 +2213,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 12" data-price="15.00" data-image="aneis12.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis12.jpeg">
         <div class="card-image">
           <img src="aneis12.jpeg" alt="Anéis delicados" />
         </div>
@@ -2240,7 +2226,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 13" data-price="15.00" data-image="aneis13.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis13.jpeg">
         <div class="card-image">
           <img src="aneis13.jpeg" alt="Anéis delicados" />
         </div>
@@ -2253,7 +2239,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 14" data-price="15.00" data-image="aneis14.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis14.jpeg">
         <div class="card-image">
           <img src="aneis14.jpeg" alt="Anéis delicados" />
         </div>
@@ -2266,7 +2252,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 15" data-price="15.00" data-image="aneis15.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis15.jpeg">
         <div class="card-image">
           <img src="aneis15.jpeg" alt="Anéis delicados" />
         </div>
@@ -2279,7 +2265,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 16" data-price="15.00" data-image="aneis16.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis16.jpeg">
         <div class="card-image">
           <img src="aneis16.jpeg" alt="Anéis delicados" />
         </div>
@@ -2292,7 +2278,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 17" data-price="15.00" data-image="aneis17.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis17.jpeg">
         <div class="card-image">
           <img src="aneis17.jpeg" alt="Anéis delicados" />
         </div>
@@ -2305,7 +2291,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 18" data-price="15.00" data-image="aneis18.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis18.jpeg">
         <div class="card-image">
           <img src="aneis18.jpeg" alt="Anéis delicados" />
         </div>
@@ -2318,7 +2304,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 19" data-price="15.00" data-image="aneis19.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis19.jpeg">
         <div class="card-image">
           <img src="aneis19.jpeg" alt="Anéis delicados" />
         </div>
@@ -2331,7 +2317,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 20" data-price="15.00" data-image="aneis20.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis20.jpeg">
         <div class="card-image">
           <img src="aneis20.jpeg" alt="Anéis delicados" />
         </div>
@@ -2344,7 +2330,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 21" data-price="15.00" data-image="aneis21.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis21.jpeg">
         <div class="card-image">
           <img src="aneis21.jpeg" alt="Anéis delicados" />
         </div>
@@ -2357,7 +2343,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 22" data-price="15.00" data-image="aneis22.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis22.jpeg">
         <div class="card-image">
           <img src="aneis22.jpeg" alt="Anéis delicados" />
         </div>
@@ -2370,7 +2356,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 23" data-price="15.00" data-image="aneis23.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis23.jpeg">
         <div class="card-image">
           <img src="aneis23.jpeg" alt="Anéis delicados" />
         </div>
@@ -2383,7 +2369,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 24" data-price="15.00" data-image="aneis24.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis24.jpeg">
         <div class="card-image">
           <img src="aneis24.jpeg" alt="Anéis delicados" />
         </div>
@@ -2396,7 +2382,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 25" data-price="15.00" data-image="aneis25.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis25.jpeg">
         <div class="card-image">
           <img src="aneis25.jpeg" alt="Anéis delicados" />
         </div>
@@ -2409,7 +2395,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 26" data-price="15.00" data-image="aneis26.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis26.jpeg">
         <div class="card-image">
           <img src="aneis26.jpeg" alt="Anéis delicados" />
         </div>
@@ -2422,7 +2408,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 27" data-price="15.00" data-image="aneis27.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis27.jpeg">
         <div class="card-image">
           <img src="aneis27.jpeg" alt="Anéis delicados" />
         </div>
@@ -2435,7 +2421,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 28" data-price="15.00" data-image="aneis28.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis28.jpeg">
         <div class="card-image">
           <img src="aneis28.jpeg" alt="Anéis delicados" />
         </div>
@@ -2448,7 +2434,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 29" data-price="15.00" data-image="aneis29.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis29.jpeg">
         <div class="card-image">
           <img src="aneis29.jpeg" alt="Anéis delicados" />
         </div>
@@ -2461,7 +2447,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 30" data-price="15.00" data-image="aneis30.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis30.jpeg">
         <div class="card-image">
           <img src="aneis30.jpeg" alt="Anéis delicados" />
         </div>
@@ -2474,7 +2460,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 31" data-price="15.00" data-image="aneis31.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis31.jpeg">
         <div class="card-image">
           <img src="aneis31.jpeg" alt="Anéis delicados" />
         </div>
@@ -2487,7 +2473,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 32" data-price="15.00" data-image="aneis32.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis32.jpeg">
         <div class="card-image">
           <img src="aneis32.jpeg" alt="Anéis delicados" />
         </div>
@@ -2500,7 +2486,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 33" data-price="15.00" data-image="aneis33.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis33.jpeg">
         <div class="card-image">
           <img src="aneis33.jpeg" alt="Anéis delicados" />
         </div>
@@ -2513,7 +2499,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 34" data-price="15.00" data-image="aneis34.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis34.jpeg">
         <div class="card-image">
           <img src="aneis34.jpeg" alt="Anéis delicados" />
         </div>
@@ -2526,7 +2512,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 35" data-price="15.00" data-image="aneis35.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis35.jpeg">
         <div class="card-image">
           <img src="aneis35.jpeg" alt="Anéis delicados" />
         </div>
@@ -2539,7 +2525,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 36" data-price="15.00" data-image="aneis36.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis36.jpeg">
         <div class="card-image">
           <img src="aneis36.jpeg" alt="Anéis delicados" />
         </div>
@@ -2552,7 +2538,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 37" data-price="15.00" data-image="aneis37.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis37.jpeg">
         <div class="card-image">
           <img src="aneis37.jpeg" alt="Anéis delicados" />
         </div>
@@ -2565,7 +2551,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 38" data-price="15.00" data-image="aneis38.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis38.jpeg">
         <div class="card-image">
           <img src="aneis38.jpeg" alt="Anéis delicados" />
         </div>
@@ -2578,7 +2564,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="aneis" data-name="Anel Delicado 39" data-price="15.00" data-image="aneis39.jpeg">
+      <div class="card" data-categoria="aneis" data-name="Anel Delicado" data-price="15.00" data-image="aneis39.jpeg">
         <div class="card-image">
           <img src="aneis39.jpeg" alt="Anéis delicados" />
         </div>
@@ -2644,7 +2630,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="acessorios-infantil" data-name="Xuxinha pompom infantil" data-price="2.50" data-image="xuxinhaspompom.jpeg">
+      <div class="card" data-categoria="acessorios-infantil" data-name="xuxinha pompom infantil" data-price="2.50" data-image="xuxinhaspompom.jpeg">
         <div class="card-image">
           <img src="xuxinhaspompom.jpeg" alt="Acessório Infantil" />
         </div>
@@ -2657,7 +2643,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="acessorios-infantil" data-name="Xuxinha infantil" data-price="2.50" data-image="xuxasinfantil.jpeg">
+      <div class="card" data-categoria="acessorios-infantil" data-name="xuxinha infantil" data-price="2.50" data-image="xuxasinfantil.jpeg">
         <div class="card-image">
           <img src="xuxasinfantil.jpeg" alt="Acessório Infantil" />
         </div>
@@ -2698,7 +2684,7 @@
       </div>
 
       <!-- ==================== PULSEIRAS / BRACELETES / TORNOZELEIRAS ==================== -->
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera 1" data-price="35.00" data-image="pulseira1.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera" data-price="35.00" data-image="pulseira1.jpeg">
         <div class="card-image">
           <img src="pulseira1.jpeg" alt="Pulseira Delicada" />
         </div>
@@ -2711,7 +2697,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera 2" data-price="30.00" data-image="pulseira2.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera" data-price="30.00" data-image="pulseira2.jpeg">
         <div class="card-image">
           <img src="pulseira2.jpeg" alt="pulseira2" />
         </div>
@@ -2724,7 +2710,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Dupla 1" data-price="30.00" data-image="pulseiradupla1.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira dupla" data-price="30.00" data-image="pulseiradupla1.jpeg">
         <div class="card-image">
           <img src="pulseiradupla1.jpeg" alt="pulseira2" />
         </div>
@@ -2737,7 +2723,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Trançada" data-price="30.00" data-image="pulseira3.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira trançada" data-price="30.00" data-image="pulseira3.jpeg">
         <div class="card-image">
           <img src="pulseira3.jpeg" alt="pulseira2" />
         </div>
@@ -2750,7 +2736,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Aço 4" data-price="30.00" data-image="pulseira4.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira Aço" data-price="30.00" data-image="pulseira4.jpeg">
         <div class="card-image">
           <img src="pulseira4.jpeg" alt="pulseira2" />
         </div>
@@ -2789,7 +2775,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 3" data-price="30.00" data-image="bracelete3.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete3.jpeg">
         <div class="card-image">
           <img src="bracelete3.jpeg" alt="pulseira2" />
         </div>
@@ -2828,7 +2814,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 5" data-price="30.00" data-image="bracelete5.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete5.jpeg">
         <div class="card-image">
           <img src="bracelete5.jpeg" alt="pulseira2" />
         </div>
@@ -2841,7 +2827,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 6" data-price="30.00" data-image="bracelete6.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete6.jpeg">
         <div class="card-image">
           <img src="bracelete6.jpeg" alt="pulseira2" />
         </div>
@@ -2854,7 +2840,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 7" data-price="30.00" data-image="bracelete7.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete7.jpeg">
         <div class="card-image">
           <img src="bracelete7.jpeg" alt="pulseira2" />
         </div>
@@ -2867,7 +2853,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 8" data-price="30.00" data-image="bracelete8.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete8.jpeg">
         <div class="card-image">
           <img src="bracelete8.jpeg" alt="pulseira2" />
         </div>
@@ -2880,7 +2866,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 9" data-price="30.00" data-image="bracelete9.png">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete9.png">
         <div class="card-image">
           <img src="bracelete9.png" alt="pulseira2" />
         </div>
@@ -2893,7 +2879,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 10" data-price="30.00" data-image="bracelete10.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete10.jpeg">
         <div class="card-image">
           <img src="bracelete10.jpeg" alt="pulseira2" />
         </div>
@@ -2906,7 +2892,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 11" data-price="30.00" data-image="bracelete11.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete11.jpeg">
         <div class="card-image">
           <img src="bracelete11.jpeg" alt="pulseira2" />
         </div>
@@ -2919,7 +2905,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 12" data-price="30.00" data-image="bracetele12.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracetele12.jpeg">
         <div class="card-image">
           <img src="bracetele12.jpeg" alt="pulseira2" />
         </div>
@@ -2932,7 +2918,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Letra M" data-price="30.00" data-image="bracelete13.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete letra M" data-price="30.00" data-image="bracelete13.jpeg">
         <div class="card-image">
           <img src="bracelete13.jpeg" alt="pulseira2" />
         </div>
@@ -2945,7 +2931,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 14" data-price="30.00" data-image="bracelete14.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="30.00" data-image="bracelete14.jpeg">
         <div class="card-image">
           <img src="bracelete14.jpeg" alt="pulseira2" />
         </div>
@@ -2958,7 +2944,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço 15" data-price="25.00" data-image="bracelete15.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bracelete Aço" data-price="25.00" data-image="bracelete15.jpeg">
         <div class="card-image">
           <img src="bracelete15.jpeg" alt="pulseira2" />
         </div>
@@ -2971,7 +2957,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Trevo 1" data-price="30.00" data-image="pulseira16.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira Trevo" data-price="30.00" data-image="pulseira16.jpeg">
         <div class="card-image">
           <img src="pulseira16.jpeg" alt="pulseira2" />
         </div>
@@ -2997,7 +2983,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Trevo 2" data-price="30.00" data-image="pulseira18.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira Trevo" data-price="30.00" data-image="pulseira18.jpeg">
         <div class="card-image">
           <img src="pulseira18.jpeg" alt="pulseira2" />
         </div>
@@ -3010,7 +2996,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera 3" data-price="40.00" data-image="pulseira19.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira replica Riviera" data-price="40.00" data-image="pulseira19.jpeg">
         <div class="card-image">
           <img src="pulseira19.jpeg" alt="pulseira2" />
         </div>
@@ -3023,7 +3009,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Pulseira Replica Riviera 4" data-price="35.00" data-image="pulseira20.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Pulseira replica Riviera" data-price="35.00" data-image="pulseira20.jpeg">
         <div class="card-image">
           <img src="pulseira20.jpeg" alt="pulseira2" />
         </div>
@@ -3036,7 +3022,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Bolsinha com Chaveiro Pompom" data-price="35.00" data-image="bolsinhacomchaveiro.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Bolsinha com chaveiro pompom" data-price="35.00" data-image="bolsinhacomchaveiro.jpeg">
         <div class="card-image">
           <img src="bolsinhacomchaveiro.jpeg" alt="Bolsinha com chaveiro" />
         </div>
@@ -3049,7 +3035,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço 1" data-price="20.00" data-image="tornozeleira1.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço" data-price="20.00" data-image="tornozeleira1.jpeg">
         <div class="card-image">
           <img src="tornozeleira1.jpeg" alt="pulseira2" />
         </div>
@@ -3062,7 +3048,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço 2" data-price="35.00" data-image="tornozeleira2.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço" data-price="35.00" data-image="tornozeleira2.jpeg">
         <div class="card-image">
           <img src="tornozeleira2.jpeg" alt="pulseira2" />
         </div>
@@ -3075,7 +3061,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço 3" data-price="35.00" data-image="tornozeleira3.jpeg">
+      <div class="card" data-categoria="pulseiras" data-name="Tornozeleira Aço" data-price="35.00" data-image="tornozeleira3.jpeg">
         <div class="card-image">
           <img src="tornozeleira3.jpeg" alt="pulseira2" />
         </div>
@@ -3155,7 +3141,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="maquiagem" data-name="Nécessaire Maquiagem" data-price="15.00" data-image="bolsa1.jpeg">
+      <div class="card" data-categoria="maquiagem" data-name="Nécessaire" data-price="15.00" data-image="bolsa1.jpeg">
         <div class="card-image">
           <img src="bolsa1.jpeg" alt="bolsa" />
         </div>
@@ -3168,7 +3154,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="maquiagem" data-name="Paleta de sombras" data-price="20.00" data-image="paletasdesombra.jpeg">
+      <div class="card" data-categoria="maquiagem" data-name="Paletas de Sombra" data-price="20.00" data-image="paletasdesombra.jpeg">
         <div class="card-image">
           <img src="paletasdesombra.jpeg" alt="bolsa" />
         </div>
@@ -3221,7 +3207,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="skincare" data-name="Nécessaire Skincare" data-price="15.00" data-image="bolsa1.jpeg">
+      <div class="card" data-categoria="skincare" data-name="Nécessaire" data-price="15.00" data-image="bolsa1.jpeg">
         <div class="card-image">
           <img src="bolsa1.jpeg" alt="bolsa" />
         </div>
@@ -3234,7 +3220,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="skincare" data-name="Adesivo tapa Mamilos" data-price="1.00" data-image="adesivotapamamilos.png">
+      <div class="card" data-categoria="skincare" data-name="Adesivo Tapa Mamilos" data-price="1.00" data-image="adesivotapamamilos.png">
         <div class="card-image">
           <img src="adesivotapamamilos.png" alt="bolsa" />
         </div>
@@ -3247,7 +3233,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="skincare" data-name="Esfoliante" data-price="15.00" data-image="esfoliante.jpeg">
+      <div class="card" data-categoria="skincare" data-name="Esfoliantes" data-price="15.00" data-image="esfoliante.jpeg">
         <div class="card-image">
           <img src="esfoliante.jpeg" alt="bolsa" />
         </div>
@@ -3273,7 +3259,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="skincare" data-name="Lápis de Olho Preto" data-price="5.00" data-image="lapisdeolho.jpeg">
+      <div class="card" data-categoria="skincare" data-name="Lápis de Olho" data-price="5.00" data-image="lapisdeolho.jpeg">
         <div class="card-image">
           <img src="lapisdeolho.jpeg" alt="bolsa" />
         </div>
@@ -3286,7 +3272,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="skincare" data-name="Delineador Água" data-price="6.00" data-image="delineador.jpeg">
+      <div class="card" data-categoria="skincare" data-name="Delineador" data-price="6.00" data-image="delineador.jpeg">
         <div class="card-image">
           <img src="delineador.jpeg" alt="bolsa" />
         </div>
@@ -3352,7 +3338,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="cabelos" data-name="Touca secadora" data-price="25.00" data-image="toucasecadora.jpeg">
+      <div class="card" data-categoria="cabelos" data-name="Touca" data-price="25.00" data-image="toucasecadora.jpeg">
         <div class="card-image">
           <img src="toucasecadora.jpeg" alt="Touca secadora" />
         </div>
@@ -3365,7 +3351,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="cabelos" data-name="Touca de cetim" data-price="5.00" data-image="toucadecetim.jpeg">
+      <div class="card" data-categoria="cabelos" data-name="Touca" data-price="5.00" data-image="toucadecetim.jpeg">
         <div class="card-image">
           <img src="toucadecetim.jpeg" alt="Touca secadora" />
         </div>
@@ -3378,7 +3364,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="cabelos" data-name="Mini chapinha" data-price="30.00" data-image="chapinhadebolsa.jpeg">
+      <div class="card" data-categoria="cabelos" data-name="mini chapinha" data-price="30.00" data-image="chapinhadebolsa.jpeg">
         <div class="card-image">
           <img src="chapinhadebolsa.jpeg" alt="mini chapinha" />
         </div>
@@ -3469,7 +3455,7 @@
         </div>
       </div>
 
-      <div class="card" data-categoria="cabelos" data-name="Elástico carteira" data-price="5.00" data-image="elastico.jpeg">
+      <div class="card" data-categoria="cabelos" data-name="Elástico" data-price="5.00" data-image="elastico.jpeg">
         <div class="card-image">
           <img src="elastico.jpeg" alt="Elástico" />
         </div>
@@ -3496,7 +3482,7 @@
       </div>
 
       <!-- ==================== UNHAS ==================== -->
-      <div class="card" data-categoria="unhas" data-name="Canetinha Hidratante de Cutícula" data-price="14.90" data-image="img/canetinha-cuticula.jpg">
+      <div class="card" data-categoria="unhas" data-name="Canetinha de Cutícula" data-price="14.90" data-image="img/canetinha-cuticula.jpg">
         <div class="card-image">
           <img src="img/canetinha-cuticula.jpg" alt="Canetinha Hidratante de Cutícula" />
         </div>
@@ -3533,76 +3519,80 @@
   <div class="overlay" id="overlay" onclick="fecharCarrinho()"></div>
 
   <!-- =====================================================
-     CARRINHO
+     CARRINHO ESTRUTURADO (RODAPÉ FIXO)
   ===================================================== -->
   <aside class="carrinho" id="carrinho">
     <div class="cabecalho-carrinho">
       <h2>Meu Carrinho 🛍️</h2>
       <button class="fechar-carrinho" onclick="fecharCarrinho()">×</button>
     </div>
-    <div class="itens-carrinho" id="itensCarrinho"></div>
 
-    <!-- DADOS DO PEDIDO -->
-    <div class="dados-pedido">
-      <h3>Dados do pedido</h3>
-      <div class="campo">
-        <label>Nome do cliente</label>
-        <input type="text" id="nomeCliente" placeholder="Digite seu nome" />
-      </div>
-      <div class="campo">
-        <label>Como deseja receber?</label>
-        <div class="opcoes">
-          <label class="opcao">
-            <input type="radio" name="tipoPedido" value="retirada" checked onchange="mostrarEntrega()" />
-            📦 Retirada
-          </label>
-          <label class="opcao">
-            <input type="radio" name="tipoPedido" value="entrega" onchange="mostrarEntrega()" />
-            🛵 Entrega
-          </label>
+    <!-- ÁREA CENTRAL COM ROLAGEM -->
+    <div class="corpo-carrinho">
+      <div class="itens-carrinho" id="itensCarrinho"></div>
+
+      <!-- DADOS DO PEDIDO -->
+      <div class="dados-pedido">
+        <h3>Dados do pedido</h3>
+        <div class="campo">
+          <label>Nome do cliente</label>
+          <input type="text" id="nomeCliente" placeholder="Digite seu nome" />
         </div>
-      </div>
-      <div class="campo" id="campoEndereco" style="display:none;">
-        <label>Endereço para entrega</label>
-        <input type="text" id="endereco" placeholder="Rua, número, bairro..." />
-      </div>
-      <div class="campo">
-        <label>Forma de pagamento</label>
-        <div class="pagamentos">
-          <label class="pagamento">
-            <input type="radio" name="pagamento" value="Pix" onchange="mostrarTroco()" />
-            💠 Pix
-          </label>
-          <label class="pagamento">
-            <input type="radio" name="pagamento" value="Cartão" onchange="mostrarTroco()" />
-            💳 Cartão
-          </label>
-          <label class="pagamento">
-            <input type="radio" name="pagamento" value="Dinheiro" onchange="mostrarTroco()" />
-            💵 Dinheiro
-          </label>
+        <div class="campo">
+          <label>Como deseja receber?</label>
+          <div class="opcoes">
+            <label class="opcao">
+              <input type="radio" name="tipoPedido" value="retirada" checked onchange="mostrarEntrega()" />
+              📦 Retirada
+            </label>
+            <label class="opcao">
+              <input type="radio" name="tipoPedido" value="entrega" onchange="mostrarEntrega()" />
+              🛵 Entrega
+            </label>
+          </div>
         </div>
-      </div>
-      <div class="campo" id="campoTroco">
-        <label>Precisa de troco?</label>
-        <div class="troco-opcoes">
-          <label class="troco-opcao">
-            <input type="radio" name="troco" value="nao" onchange="mostrarValorTroco()" />
-            Não
-          </label>
-          <label class="troco-opcao">
-            <input type="radio" name="troco" value="sim" onchange="mostrarValorTroco()" />
-            Sim
-          </label>
+        <div class="campo" id="campoEndereco" style="display:none;">
+          <label>Endereço para entrega</label>
+          <input type="text" id="endereco" placeholder="Rua, número, bairro..." />
         </div>
-      </div>
-      <div class="campo" id="campoValorTroco">
-        <label>Troco para quanto?</label>
-        <input type="number" id="valorTroco" step="0.01" min="0" placeholder="Ex.: 50,00" />
+        <div class="campo">
+          <label>Forma de pagamento</label>
+          <div class="pagamentos">
+            <label class="pagamento">
+              <input type="radio" name="pagamento" value="Pix" onchange="mostrarTroco()" />
+              💠 Pix
+            </label>
+            <label class="pagamento">
+              <input type="radio" name="pagamento" value="Cartão" onchange="mostrarTroco()" />
+              💳 Cartão
+            </label>
+            <label class="pagamento">
+              <input type="radio" name="pagamento" value="Dinheiro" onchange="mostrarTroco()" />
+              💵 Dinheiro
+            </label>
+          </div>
+        </div>
+        <div class="campo" id="campoTroco">
+          <label>Precisa de troco?</label>
+          <div class="troco-opcoes">
+            <label class="troco-opcao">
+              <input type="radio" name="troco" value="nao" onchange="mostrarValorTroco()" />
+              Não
+            </label>
+            <label class="troco-opcao">
+              <input type="radio" name="troco" value="sim" onchange="mostrarValorTroco()" />
+              Sim
+            </label>
+          </div>
+        </div>
+        <div class="campo" id="campoValorTroco">
+          <label>Troco para quanto?</label>
+          <input type="number" id="valorTroco" step="0.01" min="0" placeholder="Ex.: 50,00" />
+        </div>
       </div>
     </div>
 
-    <!-- RESUMO -->
+    <!-- RESUMO SEMPRE FIXO EM EMBAIXO NO CELULAR -->
     <div class="resumo">
       <div class="linha-resumo">
         <span>Subtotal</span>
@@ -3751,12 +3741,13 @@
       });
     }
 
-    /* ADICIONAR ITEM AO CARRINHO */
+    /* ADICIONAR ITEM AO CARRINHO (PEGA O NOME LIMPO DO H3) */
     function adicionarDoCard(botao) {
       const card = botao.closest(".card");
       if (!card) return;
 
-      const nome = card.dataset.name;
+      const h3 = card.querySelector("h3");
+      const nome = h3 ? h3.innerText.trim() : card.dataset.name;
       const preco = parseFloat(card.dataset.price);
       const imagem = card.dataset.image || card.querySelector("img")?.src || "";
 
@@ -3764,8 +3755,9 @@
     }
 
     function adicionarCarrinho(nome, preco, imagem) {
+      // Diferencia produtos por nome E imagem para modelos diferentes não se misturarem
       const existente = carrinho.find(function(item) {
-        return item.nome === nome;
+        return item.nome === nome && item.imagem === imagem;
       });
 
       if (existente) {
@@ -3802,7 +3794,7 @@
       atualizarCarrinho();
     }
 
-    /* REMOVER ITEM DIRETO DO CARRINHO (PELO BOTAO DE LIXO) */
+    /* REMOVER ITEM PELO LIXINHO */
     function removerItem(index) {
       if (carrinho[index]) {
         carrinho.splice(index, 1);
