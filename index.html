@@ -22,6 +22,7 @@
       --texto: #40343a;
       --cinza: #897b82;
       --borda: #eddce3;
+      --vermelho-lixo: #e74c3c;
     }
 
     /* =====================================================
@@ -530,7 +531,7 @@
     }
 
     /* =====================================================
-       ITENS CARRINHO
+       ITENS CARRINHO & BOTÃO REMOVER (LIXO)
     ===================================================== */
     .itens-carrinho {
       flex: 1;
@@ -546,6 +547,7 @@
 
     .item-carrinho {
       display: flex;
+      align-items: center;
       gap: 12px;
       padding: 14px 0;
       border-bottom: 1px solid #eee;
@@ -608,6 +610,27 @@
       font-weight: bold;
       min-width: 20px;
       text-align: center;
+    }
+
+    /* ESTILO DO LIXINHO DE REMOVER */
+    .btn-remover-item {
+      background: transparent;
+      border: none;
+      color: var(--vermelho-lixo);
+      font-size: 18px;
+      cursor: pointer;
+      padding: 6px;
+      border-radius: 6px;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+    }
+
+    .btn-remover-item:hover {
+      background: #fdf0ed;
+      transform: scale(1.15);
     }
 
     /* =====================================================
@@ -3779,6 +3802,14 @@
       atualizarCarrinho();
     }
 
+    /* REMOVER ITEM DIRETO DO CARRINHO (PELO BOTAO DE LIXO) */
+    function removerItem(index) {
+      if (carrinho[index]) {
+        carrinho.splice(index, 1);
+      }
+      atualizarCarrinho();
+    }
+
     function atualizarCarrinho() {
       const lista = document.getElementById("itensCarrinho");
       const quantidade = carrinho.reduce(function(total, item) {
@@ -3813,6 +3844,9 @@
                 </div>
               </div>
               <strong>${dinheiro(item.preco * item.quantidade)}</strong>
+              <button class="btn-remover-item" onclick="removerItem(${index})" title="Remover item">
+                🗑️
+              </button>
             </div>
           `;
         });
