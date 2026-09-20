@@ -3621,7 +3621,7 @@
   <!-- =====================================================
      SCRIPT JAVASCRIPT LÓGICA DO SITE
   ===================================================== -->
-  <script>
+ <script>
     /* CONFIGURAÇÕES */
     const NUMERO_WHATSAPP = "5517991951090";
     const TAXA_ENTREGA = 3;
@@ -3713,27 +3713,29 @@
     let pontoInicialX;
     let rolagemInicialX;
 
-    menuContainer.addEventListener("mousedown", (e) => {
-      estaPressionado = true;
-      pontoInicialX = e.pageX - menuContainer.offsetLeft;
-      rolagemInicialX = menuContainer.scrollLeft;
-    });
+    if (menuContainer) {
+      menuContainer.addEventListener("mousedown", (e) => {
+        estaPressionado = true;
+        pontoInicialX = e.pageX - menuContainer.offsetLeft;
+        rolagemInicialX = menuContainer.scrollLeft;
+      });
 
-    menuContainer.addEventListener("mouseleave", () => {
-      estaPressionado = false;
-    });
+      menuContainer.addEventListener("mouseleave", () => {
+        estaPressionado = false;
+      });
 
-    menuContainer.addEventListener("mouseup", () => {
-      estaPressionado = false;
-    });
+      menuContainer.addEventListener("mouseup", () => {
+        estaPressionado = false;
+      });
 
-    menuContainer.addEventListener("mousemove", (e) => {
-      if (!estaPressionado) return;
-      e.preventDefault();
-      const x = e.pageX - menuContainer.offsetLeft;
-      const distancia = (x - pontoInicialX) * 2;
-      menuContainer.scrollLeft = rolagemInicialX - distancia;
-    });
+      menuContainer.addEventListener("mousemove", (e) => {
+        if (!estaPressionado) return;
+        e.preventDefault();
+        const x = e.pageX - menuContainer.offsetLeft;
+        const distancia = (x - pontoInicialX) * 2;
+        menuContainer.scrollLeft = rolagemInicialX - distancia;
+      });
+    }
 
     function irParaProdutos() {
       document.getElementById("produtos").scrollIntoView({
@@ -3741,7 +3743,7 @@
       });
     }
 
-    /* ADICIONAR ITEM AO CARRINHO (PEGA O NOME LIMPO DO H3) */
+    /* ADICIONAR ITEM AO CARRINHO */
     function adicionarDoCard(botao) {
       const card = botao.closest(".card");
       if (!card) return;
@@ -3959,9 +3961,13 @@
 
       carrinho.forEach(function(item) {
         const subtotalItem = item.preco * item.quantidade;
+
+        // Gera o link completo HTTPS da imagem hospedada no GitHub Pages
+        const linkFoto = new URL(item.imagem, window.location.href).href;
+
         mensagem += "• " + item.nome + "\n";
-        mensagem += "  Quantidade: " + item.quantidade + "\n";
-        mensagem += "  Valor: " + dinheiro(subtotalItem) + "\n\n";
+        mensagem += "  Qtd: " + item.quantidade + "x (" + dinheiro(subtotalItem) + ")\n";
+        mensagem += "  📸 Foto: " + linkFoto + "\n\n";
       });
 
       mensagem += "*FORMA DE RECEBIMENTO*\n";
@@ -4013,7 +4019,7 @@
     const primeiroBotao = document.querySelector('.menu-categorias button');
     filtrar('conjuntos', primeiroBotao);
     atualizarCarrinho();
-  </script>
+</script>
 
 </body>
 
